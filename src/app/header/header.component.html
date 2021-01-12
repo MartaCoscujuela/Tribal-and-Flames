@@ -1,0 +1,21 @@
+<header (window:scroll)="doSomethingOnWindowsScroll($event)" [ngStyle]="{'height':headerHeight+'px'}">
+ <div class="header-bar" [ngStyle]="{'margin-top':30+((1-imageTransition)*-10)+'px'}">
+    <div id="rrss">
+     <fa-icon class="icon-rrss" [icon]="fainsta"></fa-icon>
+      <fa-icon class="icon-rrss" [icon]="fafacebook"></fa-icon>
+      <fa-icon class="icon-rrss" [icon]="fayoutube"></fa-icon>
+      <fa-icon class="icon-rrss" [icon]="famail"></fa-icon>
+    </div>
+    <div id="user">
+      <img class="lang" src="https://via.placeholder.com/30/?text=Spa">
+      <img class="lang" src="https://via.placeholder.com/30/?text=Eng">
+      <fa-icon [icon]="fauser" class="user-icon"></fa-icon>
+    </div>
+  </div>
+  <div class="header-box">
+    <div class="row">
+        <img src="https://via.placeholder.com/150"   [ngStyle]="{'opacity':imageTransition, 'top':50+((1-imageTransition)*-300)+'px'}" class="logo"/>
+        <h1 class="title" [ngStyle]="{'top':300+((1-imageTransition)*-270)+'px'}">Tribal & Flames</h1>
+    </div>
+  </div>
+</header>
