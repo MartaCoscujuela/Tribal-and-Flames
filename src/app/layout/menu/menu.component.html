@@ -1,0 +1,11 @@
+<div class="menu-container" (window:scroll)="doSomethingOnWindowsScroll($event)" [ngStyle]="{'top':menuPos+'px'}" [ngClass]="{'solid-background': solidBackground}">
+  <ul id="menu">
+    <li [routerLink]="['/about']" routerLinkActive="active" >SOBRE T&F</li>
+    <li [routerLink]="['/cursos']" routerLinkActive="active">CURSOS</li>
+    <li [routerLink]="['/annademas']" routerLinkActive="active">SOBRE ANNA DE MAS</li>
+    <li [routerLink]="['/crew']" routerLinkActive="active">TGF &copy; CREW </li>
+    <li [routerLink]="['/shows']" routerLinkActive="active">SHOWS</li>
+    <li [routerLink]="['/descuentos']" routerLinkActive="active">DESCUENTOS</li>
+    <li [routerLink]="['/faq']" routerLinkActive="active">F.A.Q</li>
+  </ul>
+</div>

@@ -13,7 +13,7 @@ export class ImageSliderComponent implements OnInit {
   }
 
   slides = [
-    {img: "http://placehold.it/350x150/000000"},
+    {img: "https://res.cloudinary.com/practicaldev/image/fetch/s--7q3tE-xl--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/qyix6eyhrnc8x9c44yp2.jpg"},
     {img: "http://placehold.it/350x150/111111"},
     {img: "http://placehold.it/350x150/333333"},
     {img: "http://placehold.it/350x150/666666"}
@@ -26,9 +26,5 @@ export class ImageSliderComponent implements OnInit {
     autoplay: true,
     autoplaySpeed: 2000,
   };
-
-  addSlide() {
-    this.slides.push({img: "http://placehold.it/350x150/777777"})
-  }
 
 }

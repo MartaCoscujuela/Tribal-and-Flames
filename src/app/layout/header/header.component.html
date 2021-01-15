@@ -15,7 +15,7 @@
   <div class="header-box">
     <div class="row">
         <img src="https://via.placeholder.com/150"   [ngStyle]="{'opacity':imageTransition, 'top':50+((1-imageTransition)*-300)+'px'}" class="logo"/>
-        <h1 class="title" [ngStyle]="{'top':300+((1-imageTransition)*-270)+'px'}">Tribal & Flames</h1>
+        <h1 class="title" [ngStyle]="{'top':300+((1-imageTransition)*-270)+'px'}" [routerLink]="['/']" routerLinkActive="router-link-active" >Tribal & Flames</h1>
     </div>
   </div>
 </header>

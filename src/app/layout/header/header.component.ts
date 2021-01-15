@@ -25,16 +25,18 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.shrinkHeader();
+
   }
 
   doSomethingOnWindowsScroll($event:Event){
-    const offset = window.pageYOffset;
-    this.shrinkHeader(offset);
+    this.shrinkHeader();
   }
 
+  shrinkHeader(){
+    const offset = window.pageYOffset;
 
-  shrinkHeader(offset: number){
     if (offset < this.breakpointHeaderShrink){
       this.headerHeight = this.maxHeaderHeight - offset;
 

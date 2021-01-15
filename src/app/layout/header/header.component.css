@@ -56,7 +56,8 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: 100px
+    top: 100px;
+    cursor: pointer;
   }
   .hide-logo{
     width: 0;
