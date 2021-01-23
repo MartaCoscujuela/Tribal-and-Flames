@@ -1,4 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-root',
@@ -6,7 +8,24 @@ import { Component, OnInit, HostListener } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'tribal-and-flames';
 
+  constructor(){}
+
+  ngOnInit(){
+    /*const customObservable = new Observable( observer => {
+
+      let count = 0;
+      setInterval(() => {
+        observer.next(count);
+        count++
+      }, 1000);
+
+    });*/
+
+  /*  customObservable.subscribe(data => {
+    })
+*/
+  }
 }

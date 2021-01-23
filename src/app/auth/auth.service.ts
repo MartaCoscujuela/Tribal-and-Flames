@@ -31,6 +31,16 @@ export class AuthService {
     return this.isAuthenticated;
   }
 
+  getfakeIsAdmin(){
+    const promise = new Promise((resolve)=>{
+      setTimeout(()=>{
+        resolve(true);
+      }), 800;
+    });
+
+    return promise;
+  }
+
   getAuthStatusListener(){
     return this.authStatusListener.asObservable();
   }
@@ -57,7 +67,7 @@ export class AuthService {
     const expirationDate = localStorage.getItem("expiration");
     const userId = localStorage.getItem("userId");
     if (!token || !expirationDate || !userId){
-      return;
+      return false;
     }
     return {
       token: token,

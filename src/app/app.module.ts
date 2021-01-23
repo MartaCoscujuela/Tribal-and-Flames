@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
@@ -8,6 +9,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ImageSliderComponent } from './sections/home/image-slider/image-slider.component';
 
 import { AppRoutingModule } from './app-routing.module';
+
 import { HomeComponent } from './sections/home/home.component';
 import { AboutribalComponent } from './sections/aboutribal/aboutribal.component';
 import { CoursesComponent } from './sections/courses/courses.component';
@@ -17,6 +19,12 @@ import { DiscountsComponent } from './sections/discounts/discounts.component';
 import { FaqComponent } from './sections/faq/faq.component';
 import { MenuComponent } from './layout/menu/menu.component';
 import { ShowsComponent } from './sections/shows/shows.component';
+import { CourseComponent } from './sections/courses/course/course.component';
+import { LayoutComponent } from './layout/layout.component';
+import { ErrorComponent } from './error/error.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 
 @NgModule({
   declarations: [
@@ -31,14 +39,20 @@ import { ShowsComponent } from './sections/shows/shows.component';
     DiscountsComponent,
     FaqComponent,
     MenuComponent,
-    ShowsComponent
+    ShowsComponent,
+    CourseComponent,
+    LayoutComponent,
+    ErrorComponent,
+
   ],
+
   imports: [
     BrowserModule,
     FontAwesomeModule,
     SlickCarouselModule,
-    AppRoutingModule
-
+    AppRoutingModule,
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

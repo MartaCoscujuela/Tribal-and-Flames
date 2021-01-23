@@ -8,32 +8,24 @@
   text-align: center;
   transition-property: height, background;
   transition-duration:0.3s;
-
-  animation-name: lighten;
-  animation-duration: 0.3s;
 }
 
 .solid-background{
   height: 50px;
-  transition-property: all;
+  transition-property: height;
   transition-duration:0.3s;
 }
 
 .solid-background #menu{
-  background-color: black;
+  background: black;
   transition-duration:0.3s;
-
-}
-
-@keyframes darken {
-  from {   background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); height: 200px  }
-  to {background-color: black; height: 50;}
+  transition-property: height;
 }
 
 #menu{
-  background-color: transparent;
+  background: transparent;
   transition-duration:0.3s;
-
+  transition-property: background;
   list-style-type: none;
   margin: 0;
   padding: 0;

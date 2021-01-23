@@ -1,11 +1,13 @@
-import { Component, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
+import { Observable} from 'rxjs';
+import { CanComponentDeactivate } from 'src/app/admin/candeactivate.guard';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent  {
+export class HomeComponent implements CanComponentDeactivate {
 
   constructor() { }
 
@@ -14,5 +16,8 @@ export class HomeComponent  {
   contentPos = this.contentBottomPos;
   breakpointMoveMenu = 300;
 
-
+  canDeactivate(): Observable<boolean> | Promise <boolean> | boolean {
+    console.log("can");
+    return confirm('Do you want to discard the changes');
+  }
 }
