@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-image-slider',
@@ -12,17 +12,20 @@ export class ImageSliderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  @ViewChild('myTestDiv') video: ElementRef;
+
   slides = [
-    {img: "https://res.cloudinary.com/practicaldev/image/fetch/s--7q3tE-xl--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/qyix6eyhrnc8x9c44yp2.jpg"},
-    {img: "http://placehold.it/350x150/111111"},
-    {img: "http://placehold.it/350x150/333333"},
-    {img: "http://placehold.it/350x150/666666"}
+    {img: "/assets/img/00_home/galeria/00.jpg"},
+    {img: "/assets/img/00_home/galeria/01.jpg"},
+    {img: "/assets/img/00_home/galeria/02.jpg"},
+    {img: "/assets/img/00_home/galeria/03.jpg"},
   ];
   slideConfig = {
     "slidesToShow": 1,
     "slidesToScroll": 1,
     adaptiveHeight: true,
-    dots: false,
+    dots: true,
     autoplay: true,
     autoplaySpeed: 2000,
   };

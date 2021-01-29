@@ -33,6 +33,8 @@
   margin: auto;
   display: block;
   line-height: 1.4;
+  font-family: 'Bebas Neue Regular', cursive;
+  font-size: 27px;
 }
 
 
@@ -44,16 +46,42 @@ li{
   vertical-align: middle;
   line-height: 50px;
   color: white;
-  font-weight: bold;
   cursor: pointer;
 
 }
 
 .active{
-  color: red;
+  color: #7effac;
   border-style: none;
 }
 
 nav{
   margin-top: 500px;
+}
+
+
+@media screen and (max-width: 1200px) {
+  #menu{
+    font-size: 20px;
+  }
+  .li{
+    line-height: 40px;
+  }
+}
+
+@media screen and (max-width:992px) {
+  #menu{
+    font-size: 16px;
+  }
+
+  li{
+    line-height: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .menu-container{
+    display: none
+  }
 }

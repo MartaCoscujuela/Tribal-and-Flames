@@ -3,6 +3,6 @@
   [config]="slideConfig">
 
 <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-  <img src="{{ slide.img }}" alt="" width="100%">
+  <div class="img" [ngStyle]="{'background-image':'url('+slide.img+')'}"></div>
 </div>
 </ngx-slick-carousel>

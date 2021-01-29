@@ -23,7 +23,7 @@ import { CourseComponent } from './sections/courses/course/course.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ErrorComponent } from './error/error.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { VimeoComponent } from './vimeo/vimeo.component';
 
 
 @NgModule({
@@ -43,7 +43,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CourseComponent,
     LayoutComponent,
     ErrorComponent,
-
+    VimeoComponent
   ],
 
   imports: [

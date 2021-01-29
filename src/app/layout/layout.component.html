@@ -1,5 +1,15 @@
-<app-header [headerHeight]="headerHeight" [imageTransition]="imageTransition"></app-header>
+<app-header
+[headerHeight]="headerHeight"
+[linearTransition]="linearTransition"
+[posClosedTitle]="posClosedTitle"
+[posOpenTitle]="posOpenTitle"
+[posOpenLogo]="posOpenLogo"
+[posClosedLogo]="posClosedLogo"
+[posOpenIcons]="posOpenIcons"
+[posClosedIcons]="posClosedIcons"
+>
+</app-header>
 <app-menu [menuPos]="headerHeight" [solidBackground]="solidMenuBackground"></app-menu>
-<main>
+<main [ngStyle]="{'margin-top': maxHeaderHeight+'px'}">
   <router-outlet></router-outlet>
 </main>

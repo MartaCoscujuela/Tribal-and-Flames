@@ -1,9 +1,6 @@
-const Section = require("../models/section");
 const Course = require("../models/course");
 const User = require("../models/user");
 const Lesson = require("../models/lesson");
-const lesson = require("../models/lesson");
-
 
 exports.getUsers = (req, res, next) => {
   //devolvemos todos los usuarios

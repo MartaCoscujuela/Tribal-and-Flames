@@ -20,4 +20,7 @@ export class HomeComponent implements CanComponentDeactivate {
     console.log("can");
     return confirm('Do you want to discard the changes');
   }
+
+
+
 }

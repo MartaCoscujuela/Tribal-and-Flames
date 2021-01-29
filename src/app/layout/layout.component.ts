@@ -1,3 +1,4 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
@@ -10,15 +11,26 @@ export class LayoutComponent implements OnInit {
   constructor() { }
 
     //vars to control header anim
-  maxHeaderHeight = 400;
+  maxHeaderHeight = 450;
   headerHeight = this.maxHeaderHeight;
   breakpointHeaderShrink = 300;
-  imageTransition = 1;
+  linearTransition = 1;
   solidMenuBackground = false;
+
+  posOpenTitle = 318;
+  posClosedTitle = 280;
+
+  posOpenLogo = 50;
+  posClosedLogo = 300;
+
+
+  posOpenIcons = 70;
+  posClosedIcons = 30;
 
 
   ngOnInit(): void {
-    this.shrinkHeader();
+    this.resizeHeader();
+    this.shrinkHeader()
   }
 
 
@@ -27,16 +39,59 @@ export class LayoutComponent implements OnInit {
     this.shrinkHeader();
   }
 
+  @HostListener("window:resize")
+  onWindowResize(){
+    this.resizeHeader();
+    this.shrinkHeader();
+  }
+
+  resizeHeader(){
+    const width = window.innerWidth;
+
+    if (width >= 1200){
+      this.maxHeaderHeight = 450;
+      this.breakpointHeaderShrink = 300;
+      this.posOpenTitle = 318;
+      this.posClosedTitle = 280;
+      this.posOpenLogo = 50;
+      this.posClosedLogo = 300;
+      this.posOpenIcons = 70;
+      this.posClosedIcons = 30;
+
+    } else if (width >= 992) {
+      this.maxHeaderHeight = 300;
+      this.breakpointHeaderShrink = 200;
+      this.posOpenTitle = 200;
+      this.posClosedTitle = 180;
+      this.posOpenLogo = 20;
+      this.posClosedLogo = 300;
+      this.posOpenIcons = 30;
+      this.posClosedIcons = 7;
+
+    } else {
+      this.maxHeaderHeight = 250;
+      this.breakpointHeaderShrink = 170;
+      this.posOpenTitle = 175;
+      this.posClosedTitle = 165;
+      this.posOpenLogo = 20;
+      this.posClosedLogo = 300;
+
+      this.posOpenIcons = 35;
+      this.posClosedIcons = 26;
+    }
+  }
 
   shrinkHeader(){
     const offset = window.pageYOffset;
     if (offset < this.breakpointHeaderShrink){
       this.headerHeight = this.maxHeaderHeight - offset;
-      this.imageTransition = 1-(offset/this.breakpointHeaderShrink);
+      this.linearTransition = 1-(offset/this.breakpointHeaderShrink);
       this.solidMenuBackground = false;
     } else {
+      console.log("headerHeight:" + this.headerHeight);
+
       this.headerHeight = this.maxHeaderHeight - this.breakpointHeaderShrink;
-      this.imageTransition = 0;
+      this.linearTransition = 0;
       this.solidMenuBackground = true;
     }
 

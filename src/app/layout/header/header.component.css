@@ -8,6 +8,7 @@
     color:#fff;
     z-index: 1000;
     text-align:center;
+    background-image: url("/assets/img/header_bg.jpg");
   }
 
   .header-bar{
@@ -16,32 +17,46 @@
     margin: 3em;
   }
 
-.logo{
-  position: relative;
-}
-
   #rrss, #user{
     display: flex;
     align-items: center;
   }
+
   .icon-rrss{
+    padding-top: 4px;
     padding-right: 0.5em;
-    font-size: 1.3em;
+    font-size: 44px;
     color: white;
+    position: relative;
+    top: -7px;
   }
 
   .lang{
+    padding-top: 5px;
     padding-right: 0.5em;
+    display: flex;
+  }
+
+  .break {
+    flex-basis: 100%;
+    height: 0;
   }
 
   .user-icon{
-    font-size: 30px;
+    font-size: 60px;
+    padding: 0 15px;
+  }
+
+  #ingresar{
+    padding-top: 9px;
+    font-size: 28px;
+    font-family: 'Rubik', sans-serif;
+    vertical-align: middle;
   }
 
   .logo{
     margin: auto;
     display: block;
-    width: 200px;
     opacity: 1;
     position: absolute;
     left: 0;
@@ -68,3 +83,64 @@
     -o-transition: all 0.7s;
     transition: all 0.7s;
   }
+
+
+
+@media screen and (max-width: 1200px) {
+
+  .title img {
+    width: 400px;
+  }
+
+  .logo{
+    width: 150px;
+  }
+
+  .lang{
+    width: 40px;
+  }
+
+  .user-icon{
+    height: 40px;
+    padding: 0 5px;
+  }
+  .icon-rrss{
+    font-size: 30px;
+    top: 0;
+  }
+
+  #ingresar{
+    font-size: 20px;
+    padding-top: 0;
+    padding-left: 5px;
+  }
+}
+
+
+@media screen and (max-width: 992px) {
+
+  .title img {
+    width: 275px;
+  }
+
+  .logo{
+    width: 140px;
+  }
+
+  .login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #ingresar{
+    font-size: 16px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+.header-bar{
+  display: none
+}
+}

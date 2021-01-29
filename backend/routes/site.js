@@ -1,5 +1,5 @@
 const express = require("express")
-
+const checkAuth = require("../middelware/checkauth")
 const router = express.Router();
 
 
@@ -11,7 +11,7 @@ router.get("/course", (req, res, next) => {
   //devolvemos la info del curso con sus clases
 });
 
-router.post("unlockLesson", (req, res, next) => {
+router.post("unlockLesson", checkAuth, (req, res, next) => {
   //un usuario añade una nueva lección
 });
 

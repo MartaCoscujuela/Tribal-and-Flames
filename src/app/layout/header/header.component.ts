@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostListener } from '@angular/core';
 import { faFacebookSquare, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faUserCircle} from '@fortawesome/free-regular-svg-icons';
 
@@ -17,7 +17,24 @@ export class HeaderComponent {
   fayoutube = faYoutube;
   fauser = faUserCircle;
   @Input() headerHeight:number;
-  @Input() imageTransition:number;
+  @Input() linearTransition:number;
+
+  @Input() posOpenTitle:number;
+  @Input() posClosedTitle:number;
+
+  @Input() posOpenLogo:number;
+  @Input() posClosedLogo:number;
+
+  @Input() posOpenIcons:number;
+  @Input() posClosedIcons:number;
+  windowWidth = 0;
 
   constructor() { }
+
+
+  @HostListener("window:resize")
+  onWindowResize(){
+    this.windowWidth = window.innerWidth;
+  }
+
 }

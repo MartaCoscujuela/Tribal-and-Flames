@@ -16,6 +16,38 @@ html, body{
 }
 
 @font-face {
-  font-family: Bebas;
-  src: url("/assets/Bebas_Neue/BebasNeue-Regular.ttf") format("truetype");
+  font-family:"Bebas Neue Regular";
+  src:url("/assets/fonts/bebas/BebasNeue-Regular.eot?") format("eot"),
+  url("/assets/fonts/bebas/BebasNeue-Regular.woff") format("woff"),
+  url("/assets/fonts/bebas/BebasNeue-Regular.ttf") format("truetype"),
+  url("/assets/fonts/bebas/BebasNeue-Regular.svg#BebasNeue-Regular") format("svg");
+  font-weight:normal;font-style:normal;
 }
+
+.slick-dots li button:before{
+  opacity: 0.5;
+  color: white;
+}
+
+.slick-dots li.slick-active button:before{
+  color: white;
+  opacity: 1;
+}
+
+.slick-dots{
+  bottom: 25px;
+}
+
+.slick-dotted.slick-slider {
+  margin-bottom: 0px;
+}
+
+iframe{
+  width: 100%;
+}
+
+.vp-center{
+  height: auto;
+}
+
+
