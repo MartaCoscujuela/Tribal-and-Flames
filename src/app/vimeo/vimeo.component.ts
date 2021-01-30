@@ -12,46 +12,43 @@ export class VimeoComponent implements OnInit {
   player : Player;
   videoPlaying = false;
 
-  pausedFirstTime = false;
+  clickedPlay = false;
   @Input() videoId;
 
 
   options = {
     id: 0,
     width: 960,
-    loop: true,
+    loop: false,
     controls: false,
-    autoplay: true,
-    responsive: true
+    responsive: true,
+    autoplay: true
   };
 
   ngOnInit(){
     this.options.id = this.videoId
     this.player = new Player('video', this.options);
-    this.player.setAutopause(true);
-
     this.player.on('ended',()=>{
       this.videoPlaying = false
     });
     this.player.on('play',()=>{
-      if (!this.pausedFirstTime){
+      if (!this.clickedPlay){
         this.player.pause();
-        this.pausedFirstTime = true;
       } else {
-        this.videoPlaying = true
-
+        this.videoPlaying = true;
       }
     });
+
     this.player.on('pause',()=>{
       this.videoPlaying = false
     });
-
   }
 
   onClick(){
 
     this.player.getPaused().then(paused => {
       if (paused){
+        this.clickedPlay = true;
         this.player.play();
       } else {
         this.player.pause();

@@ -1,0 +1,19 @@
+.intro{
+  padding: 3em
+}
+
+button{
+  background-color: #FA413E;
+  border: none;
+}
+
+h2{
+  color: #FA413E;
+}
+button:hover{
+  color: #A22E2A
+}
+
+.intro p{
+  width: 550px;
+}
