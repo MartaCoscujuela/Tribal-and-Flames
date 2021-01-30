@@ -28,6 +28,7 @@ export class ImageSliderComponent implements OnInit {
     dots: true,
     autoplay: true,
     autoplaySpeed: 2000,
+    arrows: false
   };
 
 }
