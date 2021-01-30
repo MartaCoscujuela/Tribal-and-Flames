@@ -1,4 +1,4 @@
-.intro{
+.intro-text{
   padding: 3em
 }
 
@@ -14,29 +14,56 @@ button:hover{
   color: #A22E2A
 }
 
-.video{
+.intro-video{
   padding: 0em;
 }
 
-.intro p{
+.intro-text p{
   max-width: 550px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1199px) {
 
   h2{
     font-size: 1.7rem;
   }
-  .intro{
+  .intro-text{
     padding: 0.5em;
+  }
+}
+
+@media screen and (max-width: 991px) {
+
+  h2{
+    font-size: 1.3rem;
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+  .intro-video{
+    padding-top: 3em;
   }
 }
 
 
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 767px) {
 
-  h2{
-    font-size: 1.3rem;
+  .intro-text{
+    padding: 2em;
+  }
+
+  .intro-text p{
+    max-width: none;
+  }
+
+  .intro-container{
+    flex-direction: column-reverse;
+  }
+
+  .btn{
+    float: right
   }
 }
