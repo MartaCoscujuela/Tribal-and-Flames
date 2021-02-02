@@ -1,0 +1,73 @@
+.intro-container{
+  background-color: white;
+}
+
+.intro-text{
+  padding: 3em
+}
+
+button{
+  background-color: #FA413E;
+  border: none;
+}
+
+h2{
+  color: #FA413E;
+}
+button:hover{
+  color: #A22E2A
+}
+
+.intro-video{
+  padding: 0em;
+}
+
+.intro-text p{
+  max-width: 550px;
+}
+
+@media screen and (max-width: 1199px) {
+
+  h2{
+    font-size: 1.7rem;
+  }
+  .intro-text{
+    padding: 0.5em;
+  }
+}
+
+@media screen and (max-width: 991px) {
+
+  h2{
+    font-size: 1.3rem;
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+  .intro-video{
+    padding-top: 3em;
+  }
+}
+
+
+
+@media screen and (max-width: 767px) {
+
+  .intro-text{
+    padding: 2em;
+  }
+
+  .intro-text p{
+    max-width: none;
+  }
+
+  .intro-container{
+    flex-direction: column-reverse;
+  }
+
+  .btn{
+    float: right
+  }
+}
