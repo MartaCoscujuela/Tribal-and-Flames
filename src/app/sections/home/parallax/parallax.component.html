@@ -1,13 +1,8 @@
-<div class="parallax-bg d-none d-lg-flex" #parallax>
-  <div class="parallax-img-0"><div class="img" [ngStyle]="{'background-position-y': 320+(offsetY*parallaxSpeed)+'px'}"></div></div>
-  <div class="parallax-img-1"><div class="img" [ngStyle]="{'background-position-y': 250+(offsetY*parallaxSpeed)+'px'}"></div></div>
-  <div class="parallax-img-2"><div class="img" [ngStyle]="{'background-position-y': 180+(offsetY*parallaxSpeed)+'px'}"></div></div>
-</div>
 
-{{ offsetY }}
-{{ onView }}
-<div class="mbl-parallax d-flex d-lg-none">
-  <div class="parallax-img-0"><div class="img" [ngClass]="{'visible':onView}"></div></div>
-  <div class="parallax-img-1"><div class="img" [ngClass]="{'visible':onView}"></div></div>
-  <div class="parallax-img-2"><div class="img" [ngClass]="{'visible':onView}"></div></div>
+top: {{top}}, height {{height}} monitor {{monitorPos}}
+
+<div class="parallax-bg d-flex"  #parallax>
+  <div class="parallax-img-0"><div class="img" [ngStyle]="{'background-position-y': offsetY +'%'}"></div></div>
+  <div class="parallax-img-1"><div class="img" [ngStyle]="{'background-position-y': offsetY + 50+'%'}"></div></div>
+  <div class="parallax-img-2"><div class="img" [ngStyle]="{'background-position-y': offsetY+ + 100 +'%'}"></div></div>
 </div>

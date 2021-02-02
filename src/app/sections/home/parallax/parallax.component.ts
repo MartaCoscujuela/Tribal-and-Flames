@@ -11,10 +11,13 @@ export class ParallaxComponent implements OnInit {
   @ViewChild('parallax', { static: true }) parallax: ElementRef;
 
   offsetY
-
+  top;
+  height;
   parallaxSpeed = -0.1;
   onView = false;
 
+
+  monitorPos;
   ngOnInit(): void {
     this.getOffsetY();
     this.setParallaxSpeed();
@@ -34,7 +37,21 @@ export class ParallaxComponent implements OnInit {
   }
 
   getOffsetY(){
-    const width = window.innerWidth;
+    this.height = window.innerHeight;
+
+    const rect = this.parallax.nativeElement.getBoundingClientRect();
+    const onScreen =
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+
+    this.top = rect.top
+
+this.mapValue();
+
+
+    /*
      if (width >= 900){
       this.offsetY = window.innerHeight/2 - (this.parallax.nativeElement.getBoundingClientRect().y);
      } else {
@@ -46,7 +63,7 @@ export class ParallaxComponent implements OnInit {
     }
     else{
       this.onView = false
-    }
+    }*/
   }
 
   setParallaxSpeed(){
@@ -61,6 +78,13 @@ export class ParallaxComponent implements OnInit {
     } else {
       this.parallaxSpeed = -0.6;
     }
+  }
 
+  mapValue(){
+
+    this.monitorPos = ((this.top - this.height) /  -this.height)
+
+    this.offsetY = ((this.top - this.height) /  -this.height) * (100+100) - 100
+   //new_value = (old_value - old_bottom) / (old_top - old_bottom) * (new_top - new_bottom) + new_bottom;
   }
 }

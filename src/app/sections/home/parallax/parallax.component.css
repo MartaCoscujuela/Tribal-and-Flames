@@ -8,43 +8,17 @@
 }
 
 
-.mbl-parallax{
-  height: 170px;
-  width: 100%;
-  background-color: #FFE5CD;
-}
-
-
-.parallax-bg>div, .mbl-parallax>div{
+.parallax-bg>div{
   width: 33%;
   height: 100%;
 }
 
 .parallax-bg .img{
-  background-attachment: fixed;
   height: 100%;
-  background-size: 30%;
+  background-size: 100%;
   background-repeat: no-repeat;
 
 }
-
-.mbl-parallax .img{
-  height: 100%;
-  background-position: center;
-  background-size: 130%;
-  background-repeat: no-repeat;
-  opacity: 0;
-  margin-top: 1em;
-  transition: all 1s;
-
-}
-
-.mbl-parallax .img.visible{
-  opacity: 1;
-  transition: all 1s;
-  margin-top: 0;
-}
-
 .parallax-bg{
   background-repeat: no-repeat;
   background-position-y: 50%;
@@ -93,12 +67,6 @@
   .parallax-bg{
     height: 150px;
   }
-
-}
-
-
-@media screen and (max-width: 768px) {
-
 
 }
 
