@@ -1,28 +1,69 @@
-.parallax{
-  position: relative;
+.intro-text{
+  padding: 3em
 }
 
-.space, .parallax-bg{
-  height: 420px;
+button{
+  background-color: #FA413E;
+  border: none;
 }
 
-.space{
-  background: transparent;
+h2{
+  color: #FA413E;
+}
+button:hover{
+  color: #A22E2A
 }
 
-.parallax-bg{
-  background-color: #FFE5CD;
-  z-index: -2;
-  position: absolute;
-  top: 0;
-  width: 100%;
+.intro-video{
+  padding: 0em;
 }
 
-.img-parallax{
-  position: fixed;
-  display: flex;
-  justify-content: space-evenly;
-  top:200px;
-  width: 100%;
-  z-index: -1;
+.intro-text p{
+  max-width: 550px;
+}
+
+@media screen and (max-width: 1199px) {
+
+  h2{
+    font-size: 1.7rem;
+  }
+  .intro-text{
+    padding: 0.5em;
+  }
+}
+
+@media screen and (max-width: 991px) {
+
+  h2{
+    font-size: 1.3rem;
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+  .intro-video{
+    padding-top: 3em;
+  }
+}
+
+
+
+@media screen and (max-width: 767px) {
+
+  .intro-text{
+    padding: 2em;
+  }
+
+  .intro-text p{
+    max-width: none;
+  }
+
+  .intro-container{
+    flex-direction: column-reverse;
+  }
+
+  .btn{
+    float: right
+  }
 }
