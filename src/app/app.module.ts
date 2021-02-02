@@ -24,6 +24,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { ErrorComponent } from './error/error.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { VimeoComponent } from './vimeo/vimeo.component';
+import { IntroComponent } from './sections/home/intro/intro.component';
+import { ParallaxComponent } from './sections/home/parallax/parallax.component';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { VimeoComponent } from './vimeo/vimeo.component';
     CourseComponent,
     LayoutComponent,
     ErrorComponent,
-    VimeoComponent
+    VimeoComponent,
+    IntroComponent,
+    ParallaxComponent
   ],
 
   imports: [
