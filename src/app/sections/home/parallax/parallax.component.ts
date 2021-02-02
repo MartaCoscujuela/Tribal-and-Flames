@@ -35,7 +35,7 @@ export class ParallaxComponent implements OnInit {
 
   getOffsetY(){
     const width = window.innerWidth;
-     if (width >= 768){
+     if (width >= 900){
       this.offsetY = window.innerHeight/2 - (this.parallax.nativeElement.getBoundingClientRect().y);
      } else {
       this.offsetY = window.pageYOffset;
