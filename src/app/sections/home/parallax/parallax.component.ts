@@ -10,17 +10,14 @@ export class ParallaxComponent implements OnInit {
   constructor() { }
   @ViewChild('parallax', { static: true }) parallax: ElementRef;
 
-  offsetY
+  offsetY1; offsetY2; offsetY3;
   top;
   height;
-  parallaxSpeed = -0.1;
-  onView = false;
 
 
   monitorPos;
   ngOnInit(): void {
     this.getOffsetY();
-    this.setParallaxSpeed();
 
   }
 
@@ -33,24 +30,36 @@ export class ParallaxComponent implements OnInit {
 
   @HostListener("window:resize")
   onWindowResize(){
-    this.setParallaxSpeed();
+    this.getOffsetY();
+
   }
 
   getOffsetY(){
     this.height = window.innerHeight;
-
+    const width = window.innerWidth;
     const rect = this.parallax.nativeElement.getBoundingClientRect();
-    const onScreen =
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth);
-
     this.top = rect.top
 
-this.mapValue();
+    let edge = 220;
+    if (width >= 600){
+      edge = 220;
+    } else {
+      edge = 100
+    }
+
+    this.offsetY1 = this.mapValues(-edge, edge, 0);
+    this.offsetY2 = this.mapValues(-edge, edge,  this.height/5);
+    this.offsetY3 = this.mapValues(-edge, edge,  this.height/2.5);
+
+      // new_value = (old_value - old_bottom) / (old_top - old_bottom) * (new_top - new_bottom) + new_bottom
+
+  }
 
 
+mapValues(max, min, offset){
+
+  return (((this.top - offset) - this.height) /  -this.height) * (max-min) + min;
+}
     /*
      if (width >= 900){
       this.offsetY = window.innerHeight/2 - (this.parallax.nativeElement.getBoundingClientRect().y);
@@ -64,27 +73,6 @@ this.mapValue();
     else{
       this.onView = false
     }*/
-  }
 
-  setParallaxSpeed(){
-    const width = window.innerWidth;
-    if (width > 1920){
-      this.parallaxSpeed = -0.1;
-    }
-    else if (width > 1200){
-      this.parallaxSpeed = -0.2;
-    } else if (width > 900){
-      this.parallaxSpeed = -0.3;
-    } else {
-      this.parallaxSpeed = -0.6;
-    }
-  }
 
-  mapValue(){
-
-    this.monitorPos = ((this.top - this.height) /  -this.height)
-
-    this.offsetY = ((this.top - this.height) /  -this.height) * (100+100) - 100
-   //new_value = (old_value - old_bottom) / (old_top - old_bottom) * (new_top - new_bottom) + new_bottom;
-  }
 }
