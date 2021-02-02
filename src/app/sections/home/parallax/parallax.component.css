@@ -11,20 +11,25 @@
   height: 200px;
   width: 100%;
   background-color: #FFE5CD;
-  background-attachment: fixed;
-  background-image: url("/assets/img/00_home/parallax/fondo.png");
-  background-size: cover;
 }
 
 
-.parallax-bg>div{
+.parallax-bg>div, .mbl-parallax>div{
   width: 33%;
   height: 100%;
 }
 
-
-.img{
+.parallax-bg .img{
   background-attachment: fixed;
+}
+
+.mbl-parallax .img{
+  height: 100%;
+background-position: center;
+background-size: cover;
+}
+
+.parallax-bg{
   background-repeat: no-repeat;
   background-position-y: 50%;
   width: 100%;
@@ -33,6 +38,7 @@
   display: block;
   position: relative;
 }
+
 .parallax-img-0 div{
   background-image: url("/assets/img/00_home/parallax/0.png");
   background-position-x: 5%;
