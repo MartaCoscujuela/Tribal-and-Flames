@@ -44,7 +44,7 @@ export class ParallaxComponent implements OnInit {
     if (width >= 600){
       edge = 220;
     } else {
-      edge = 100
+      edge = 50
     }
 
     this.offsetY1 = this.mapValues(-edge, edge, 0);
