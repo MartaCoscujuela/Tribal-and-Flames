@@ -9,21 +9,19 @@
 
 .mbl-parallax{
   height: 200px;
+  width: 100%;
+  background-color: #FFE5CD;
+  background-attachment: fixed;
+  background-image: url("/assets/img/00_home/parallax/fondo.png");
+  background-size: cover;
 }
+
 
 .parallax-bg>div{
   width: 33%;
   height: 100%;
 }
 
-
-.mbl-parallax>div{
-  background-attachment: fixed;
-  height: 100%;
-  width: 100%;
-  background-color: #FFE5CD;
-
-}
 
 .img{
   background-attachment: fixed;
@@ -41,31 +39,15 @@
 
 }
 
-.mbl-parallax-0{
-  background-image: url("/assets/img/00_home/parallax/0.png");
-}
-
 .parallax-img-1 div {
   background-image: url("/assets/img/00_home/parallax/1.png");
   background-position-x: 50%;
 
 }
-
-
-.mbl-parallax-1{
-  background-image: url("/assets/img/00_home/parallax/1.png");
-}
-
-
 .parallax-img-2 div{
   background-image: url("/assets/img/00_home/parallax/2.png");
   background-position-x: 95%;
 
-}
-
-
-.mbl-parallax-2{
-  background-image: url("/assets/img/00_home/parallax/2.png");
 }
 
 
