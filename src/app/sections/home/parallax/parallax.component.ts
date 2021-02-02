@@ -13,6 +13,7 @@ export class ParallaxComponent implements OnInit {
   offsetY
 
   parallaxSpeed = -0.1;
+  onView = false;
 
   ngOnInit(): void {
     this.getOffsetY();
@@ -34,13 +35,20 @@ export class ParallaxComponent implements OnInit {
 
   getOffsetY(){
     console.log(window.innerHeight);
-    this.offsetY = window.innerHeight/2 - (this.parallax.nativeElement.getBoundingClientRect().y);
-    console.log(this.offsetY);
+    //this.offsetY = window.innerHeight/2 - (this.parallax.nativeElement.getBoundingClientRect().y);
+    this.offsetY = window.pageYOffset;
+
+    console.log("offset: " +this.offsetY);
+    if(this.offsetY > 900){
+      this.onView = true
+    }
+    else{
+      this.onView = false
+    }
   }
 
   setParallaxSpeed(){
     const width = window.innerWidth;
-
     if (width > 1920){
       this.parallaxSpeed = -0.1;
     }

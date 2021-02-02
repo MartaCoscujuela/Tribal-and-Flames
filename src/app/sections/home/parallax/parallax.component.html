@@ -5,8 +5,9 @@
 </div>
 
 
+{{onView}}
 <div class="mbl-parallax d-flex d-md-none">
-  <div class="parallax-img-0"><div class="img"></div></div>
-  <div class="parallax-img-1"><div class="img"></div></div>
-  <div class="parallax-img-2"><div class="img"></div></div>
+  <div class="parallax-img-0"><div class="img" [ngClass]="{'visible':onView}"></div></div>
+  <div class="parallax-img-1"><div class="img" [ngClass]="{'visible':onView}"></div></div>
+  <div class="parallax-img-2"><div class="img" [ngClass]="{'visible':onView}"></div></div>
 </div>
