@@ -48,6 +48,8 @@ export class ParallaxComponent implements OnInit {
       this.parallaxSpeed = -0.2;
     } else if (width > 900){
       this.parallaxSpeed = -0.3;
+    } else {
+      this.parallaxSpeed = -0.6;
     }
 
   }
