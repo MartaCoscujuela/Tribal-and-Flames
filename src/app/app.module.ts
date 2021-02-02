@@ -25,6 +25,7 @@ import { ErrorComponent } from './error/error.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { VimeoComponent } from './vimeo/vimeo.component';
 import { ParallaxComponent } from './sections/home/parallax/parallax.component';
+import { StatementsComponent } from './sections/home/statements/statements.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { ParallaxComponent } from './sections/home/parallax/parallax.component';
     LayoutComponent,
     ErrorComponent,
     VimeoComponent,
-    ParallaxComponent
+    ParallaxComponent,
+    StatementsComponent
   ],
 
   imports: [

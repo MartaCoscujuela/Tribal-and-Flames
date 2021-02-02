@@ -56,3 +56,8 @@ iframe{
   font-family: 'Rubik', sans-serif;
 }
 
+.accent{
+  font-family: inherit;
+  color: #00FFA9;
+  padding: 0 0.2em;
+}

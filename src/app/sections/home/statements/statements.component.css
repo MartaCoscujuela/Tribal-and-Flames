@@ -1,0 +1,51 @@
+.statements-container{
+  height: 120px;
+  background-color: #FA413E;
+  text-align: center;
+  font-size: 68px;
+}
+
+
+.statement{
+  color: white;
+  font-family: 'Bebas Neue Regular';
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accent{
+  font-family: inherit;
+  color: #00FFA9;
+}
+
+@media (max-width: 1200px) {
+  .statements-container{
+    height: 100px;
+    font-size: 60px;
+  }
+  .statement{
+    height: 100px;
+  }
+}
+
+@media (max-width: 900px) {
+  .statements-container{
+    height: 90px;
+    font-size: 55px;
+  }
+  .statement{
+    height: 90px;
+  }
+}
+
+@media (max-width: 756px) {
+  .statements-container{
+    height: 80px;
+    font-size: 32px;
+  }
+  .statement{
+    height: 80px;
+  }
+}
