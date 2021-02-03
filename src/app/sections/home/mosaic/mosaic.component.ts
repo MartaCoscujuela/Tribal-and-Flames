@@ -27,6 +27,7 @@ export class MosaicComponent implements OnInit {
 
   ngOnInit(): void {
     this.player = new Player('video2', this.options);
+    this.player.play();
   }
 
  onClick(){

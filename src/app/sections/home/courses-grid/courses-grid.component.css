@@ -109,4 +109,13 @@ button{
   button{
     margin-bottom: 5em;
   }
+
+  .background-images{
+
+    top: 0;
+    bottom: 0;
+    opacity: 1;
+    background-size: cover;
+  }
+
 }
