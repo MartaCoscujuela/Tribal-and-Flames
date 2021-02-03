@@ -12,6 +12,7 @@ export class MosaicComponent implements OnInit {
 
   player2 : Player;
 
+  playing = false;
 
   options = {
     id: 482704655,
@@ -33,7 +34,10 @@ export class MosaicComponent implements OnInit {
 
   @HostListener("window:scroll")
   onWindowScroll(){
-    this.player2.play();
+    if (!this.playing){
+      this.player2.play();
+      this.playing = true;
+    }
   }
 
  onClick(){
