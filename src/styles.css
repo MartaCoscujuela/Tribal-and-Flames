@@ -18,7 +18,7 @@ html, body{
 @font-face {
   font-family:"Bebas Neue Regular";
   src:url("/assets/fonts/bebas/BebasNeue-Regular.woff") format("woff");
-  font-weight:normal;font-style:normal;   font-display: swap;
+  font-weight:normal;font-style:normal;   font-display: block;
 
 }
 
