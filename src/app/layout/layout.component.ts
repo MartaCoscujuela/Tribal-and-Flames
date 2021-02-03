@@ -88,8 +88,6 @@ export class LayoutComponent implements OnInit {
       this.linearTransition = 1-(offset/this.breakpointHeaderShrink);
       this.solidMenuBackground = false;
     } else {
-      console.log("headerHeight:" + this.headerHeight);
-
       this.headerHeight = this.maxHeaderHeight - this.breakpointHeaderShrink;
       this.linearTransition = 0;
       this.solidMenuBackground = true;

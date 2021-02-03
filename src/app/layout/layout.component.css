@@ -1,12 +1,4 @@
 
-.component{
-  height: 2000px;
-}
-
-
-main {
-  height: 2000px;
-}
 @media screen and (max-width: 768px) {
   main{
     -webkit-overflow-scrolling: touch;

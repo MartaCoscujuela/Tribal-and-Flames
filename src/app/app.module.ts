@@ -26,6 +26,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { VimeoComponent } from './vimeo/vimeo.component';
 import { ParallaxComponent } from './sections/home/parallax/parallax.component';
 import { StatementsComponent } from './sections/home/statements/statements.component';
+import { CoursesGridComponent } from './sections/home/courses-grid/courses-grid.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { StatementsComponent } from './sections/home/statements/statements.compo
     ErrorComponent,
     VimeoComponent,
     ParallaxComponent,
-    StatementsComponent
+    StatementsComponent,
+    CoursesGridComponent
   ],
 
   imports: [

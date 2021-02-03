@@ -1,6 +1,6 @@
 .parallax-bg{
   height: 420px;
-  background-color: #FFE5CD;
+  background: linear-gradient(to top, #e4cab4, #ebd1ba, #f1d7c0, #f8dec7, #ffe5cd);
   display: flex;
   justify-content: space-evenly;
   z-index: -5;
@@ -19,14 +19,7 @@
   background-repeat: no-repeat;
 
 }
-.parallax-bg{
-  background-repeat: no-repeat;
-  background-position-y: 50%;
-  width: 100%;
-  background-size: 30%;
-  display: block;
-  position: relative;
-}
+
 
 .parallax-img-0 div{
   background-image: url("/assets/img/00_home/parallax/0.png");
