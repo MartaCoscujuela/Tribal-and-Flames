@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import Player from '@vimeo/player';
 
 @Component({
@@ -28,12 +28,12 @@ export class MosaicComponent implements OnInit {
 
   ngOnInit(): void {
     this.player2 = new Player('video2', this.options);
+  }
 
 
-    setTimeout(()=>{
-      this.player2.play();
-      console.log("play?");
-    }, 3000);
+  @HostListener("window:scroll")
+  onWindowScroll(){
+    this.player2.play();
   }
 
  onClick(){
