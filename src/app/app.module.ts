@@ -28,6 +28,8 @@ import { ParallaxComponent } from './sections/home/parallax/parallax.component';
 import { StatementsComponent } from './sections/home/statements/statements.component';
 import { CoursesGridComponent } from './sections/home/courses-grid/courses-grid.component';
 import { MosaicComponent } from './sections/home/mosaic/mosaic.component';
+import { IntroComponent } from './sections/home/intro/intro.component';
+import { ClaimComponent } from './sections/home/claim/claim.component';
 
 
 @NgModule({
@@ -51,7 +53,9 @@ import { MosaicComponent } from './sections/home/mosaic/mosaic.component';
     ParallaxComponent,
     StatementsComponent,
     CoursesGridComponent,
-    MosaicComponent
+    MosaicComponent,
+    IntroComponent,
+    ClaimComponent
   ],
 
   imports: [
