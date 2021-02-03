@@ -10,7 +10,7 @@ export class MosaicComponent implements OnInit {
 
   constructor() { }
 
-  player : Player;
+  player2 : Player;
 
 
   options = {
@@ -19,19 +19,21 @@ export class MosaicComponent implements OnInit {
     loop: true,
     controls: false,
     responsive: true,
-    autoplay: true
+    autoplay: false,
+    preload: true
   };
 
   videoPlaying = false;
   clickedPlay = false;
 
   ngOnInit(): void {
-    this.player = new Player('video2', this.options);
+    this.player2 = new Player('video2', this.options);
 
 
     setTimeout(()=>{
-      this.player.play();
-    }, 1000);
+      this.player2.play();
+      console.log("play?");
+    }, 3000);
   }
 
  onClick(){

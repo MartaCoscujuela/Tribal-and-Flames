@@ -22,7 +22,8 @@ export class VimeoComponent implements OnInit {
     loop: false,
     controls: false,
     responsive: true,
-    autoplay: true
+    autoplay: true,
+    preload: true
   };
 
   ngOnInit(){
