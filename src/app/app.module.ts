@@ -27,6 +27,7 @@ import { VimeoComponent } from './vimeo/vimeo.component';
 import { ParallaxComponent } from './sections/home/parallax/parallax.component';
 import { StatementsComponent } from './sections/home/statements/statements.component';
 import { CoursesGridComponent } from './sections/home/courses-grid/courses-grid.component';
+import { MosaicComponent } from './sections/home/mosaic/mosaic.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { CoursesGridComponent } from './sections/home/courses-grid/courses-grid.
     VimeoComponent,
     ParallaxComponent,
     StatementsComponent,
-    CoursesGridComponent
+    CoursesGridComponent,
+    MosaicComponent
   ],
 
   imports: [

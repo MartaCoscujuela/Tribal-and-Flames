@@ -97,6 +97,7 @@ button{
   display: block;
   border: none;
   margin-bottom: 2em;
+  font-size: 18px;
 }
 
 @media screen and (max-width: 768px) {

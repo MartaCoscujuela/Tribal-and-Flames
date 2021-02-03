@@ -24,6 +24,31 @@ html, body{
   font-weight:normal;font-style:normal;
 }
 
+@font-face {
+  font-family: 'Century Schoolbook';
+  src: url('/assets/fonts/century/CenturySchoolbook.woff2') format('woff2'),
+      url('/assets/fonts/century/CenturySchoolbook.woff') format('woff'),
+      url('/assets/fonts/century/CenturySchoolbook.ttf') format('truetype'),
+      url('/assets/fonts/century/CenturySchoolbook.svg#CenturySchoolbook') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Century Schoolbook';
+  src: url('/assets/fonts/century/CenturySchoolbook-BoldItalic.eot');
+  src: url('/assets/fonts/century/CenturySchoolbook-BoldItalic.eot?#iefix') format('embedded-opentype'),
+      url('/assets/fonts/century/CenturySchoolbook-BoldItalic.woff2') format('woff2'),
+      url('/assets/fonts/century/CenturySchoolbook-BoldItalic.woff') format('woff'),
+      url('/assets/fonts/century/CenturySchoolbook-BoldItalic.ttf') format('truetype'),
+      url('/assets/fonts/century/CenturySchoolbook-BoldItalic.svg#CenturySchoolbook-BoldItalic') format('svg');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+
 .slick-dots li button:before{
   opacity: 0.5;
   color: white;
@@ -60,4 +85,21 @@ iframe{
   font-family: inherit;
   color: #00FFA9;
   padding: 0 0.2em;
+}
+
+
+
+button{
+  border: none;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  user-select: none;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  color:white
 }
