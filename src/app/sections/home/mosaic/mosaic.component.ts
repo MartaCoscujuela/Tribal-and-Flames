@@ -17,16 +17,44 @@ export class MosaicComponent implements OnInit {
     id: 482704655,
     width: 1920,
     loop: false,
-    controls: true,
+    controls: false,
     responsive: true,
     autoplay: false
   };
 
+  videoPlaying = false;
+  clickedPlay = false;
 
   ngOnInit(): void {
     this.player = new Player('video2', this.options);
-    console.log("play");
-    this.player.play();
+
+    this.player.on('ended',()=>{
+      this.videoPlaying = false
+    });
+    this.player.on('play',()=>{
+      if (!this.clickedPlay){
+        this.player.pause();
+      } else {
+        this.videoPlaying = true;
+      }
+    });
+
+    this.player.on('pause',()=>{
+      this.videoPlaying = false
+    });
   }
 
+  onClick(){
+
+    this.player.getPaused().then(paused => {
+      if (paused){
+        this.clickedPlay = true;
+        this.player.play();
+      } else {
+        this.player.pause();
+      }
+    }).catch(error =>{
+      console.log(error);
+    })
+  }
 }

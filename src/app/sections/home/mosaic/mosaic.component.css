@@ -34,6 +34,10 @@
 h2{
   color: white;
   font-family: 'Bebas Neue Regular', cursive;
+}
+
+.about h2{
+
   font-size: 52px;
   text-align: right;
   line-height: 0.5em;
@@ -42,7 +46,7 @@ h2{
   margin-top: 40px;
 }
 
-h3{
+.about h3{
   font-family: "Century Schoolbook", cursive, serif;
   font-style: italic;
   color: white;
@@ -59,9 +63,50 @@ h3 div{
   display: inline-block;
 }
 
+.shows h2, .fans h2{
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-size: 71px;
+  margin-bottom: 0;
+  line-height: 0.9em;
+}
+
+.shows{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.fans{
+  display: flex;
+  justify-content: start;
+  align-content: center;
+  flex-direction: column;
+  padding-top: 2em;
+}
+.shows p, .fans p{
+  font-family: 'Rubik', sans-serif;
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
 
 button{
   background-color: #FA413E;
+}
+
+button:hover{
+  background-color: #A22E2A;
+}
+
+.about button{
   position: absolute;
   left:0;
   right: 0;
@@ -69,55 +114,110 @@ button{
   bottom:30px
 }
 
-button:hover{
-  background-color: #A22E2A;
+.shows button, .fans button{
+  position: relative;
+  z-index: 1;
+  width: 170px;
+  margin: 2em auto 0 auto;
 }
 
-
-
-@media screen and (max-width: 768px) {
-  .about div{
-    height: 56.2vw;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+.fans button{
+  margin-top: 0em;
 }
+
+#video2{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.play{
+  position: absolute;
+  top: 3vw;
+  right: 3vw;
+  height: 12%;
+
+}
+
+.play img{
+  height: 100%;
+  width: auto;
+}
+
 
 
 @media screen and (max-width: 1600px) {
-  h2{
+ .about h2, .shows h2, .fans h2{
     font-size: 40px;
   }
 
-  h3{
+  .about h3, .shows p, .fans p{
     font-size: 15px;
   }
 }
 
 @media screen and (max-width: 1300px) {
-  h2{
+  .about h2{
     margin-right: 10px;
     margin-top: 15px;
 
   }
 
-  h3{
+  .about h3{
     margin-right: 10px;
+  }
+
+  .shows button, .fans button{
+    margin-top: 1em;
   }
 }
 @media screen and (max-width: 1050px) {
-    h2{
+  .about h2{
       font-size: 30px;
     }
+
 }
 @media screen and (max-width: 768px) {
-  h2{
+  .about  h2, .shows h2{
     font-size: 40px;
+  }
+  .about div{
+    height: 56.2vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .shows button, .fans button{
+    margin-top: 10px;
+  }
+
+  .shows h2, .shows p, .fans p{
+    margin: 0;
+  }
+
+  .fans{
+    justify-content: center;
+    padding-top: 0;
   }
 }
 
-@media screen and (max-width: 400px) {
-  h2{
+
+@media screen and (max-width: 500px) {
+  .about h2, .shows h2, .fans h2{
     font-size: 25px;
+  }
+
+  .fans p, .shows p {
+    font-size: 10px;
+  }
+
+  .fans button, .shows button{
+    width: 123px;
+  }
+
+  .fans button, .shows button, .about button{
+    font-size: 10px
   }
 }
