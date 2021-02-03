@@ -21,7 +21,8 @@ export class MosaicComponent implements OnInit {
     controls: false,
     responsive: true,
     autoplay: false,
-    preload: true
+    preload: true,
+    mute: true
   };
 
   videoPlaying = false;
