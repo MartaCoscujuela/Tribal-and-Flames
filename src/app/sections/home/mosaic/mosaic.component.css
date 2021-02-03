@@ -201,6 +201,11 @@ button:hover{
     justify-content: center;
     padding-top: 0;
   }
+
+  p{
+    text-shadow: 2px 2px 2px #000000
+
+  }
 }
 
 
@@ -220,4 +225,6 @@ button:hover{
   .fans button, .shows button, .about button{
     font-size: 10px
   }
+
+
 }
