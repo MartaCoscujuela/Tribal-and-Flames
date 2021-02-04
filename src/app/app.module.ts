@@ -30,6 +30,8 @@ import { CoursesGridComponent } from './sections/home/courses-grid/courses-grid.
 import { MosaicComponent } from './sections/home/mosaic/mosaic.component';
 import { IntroComponent } from './sections/home/intro/intro.component';
 import { ClaimComponent } from './sections/home/claim/claim.component';
+import { InstagramComponent } from './sections/home/instagram/instagram.component';
+import { ContactComponent } from './sections/home/contact/contact.component';
 
 
 @NgModule({
@@ -55,7 +57,9 @@ import { ClaimComponent } from './sections/home/claim/claim.component';
     CoursesGridComponent,
     MosaicComponent,
     IntroComponent,
-    ClaimComponent
+    ClaimComponent,
+    InstagramComponent,
+    ContactComponent
   ],
 
   imports: [

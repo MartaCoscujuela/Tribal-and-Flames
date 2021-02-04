@@ -35,10 +35,10 @@ export class MosaicComponent implements OnInit {
 
   @HostListener("window:scroll")
   onWindowScroll(){
-    if (!this.playing){
+   /* if (!this.playing){
       this.player2.play();
       this.playing = true;
-    }
+    }*/
   }
 
  onClick(){
