@@ -32,6 +32,7 @@ import { IntroComponent } from './sections/home/intro/intro.component';
 import { ClaimComponent } from './sections/home/claim/claim.component';
 import { InstagramComponent } from './sections/home/instagram/instagram.component';
 import { ContactComponent } from './sections/home/contact/contact.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { ContactComponent } from './sections/home/contact/contact.component';
     IntroComponent,
     ClaimComponent,
     InstagramComponent,
-    ContactComponent
+    ContactComponent,
+    FooterComponent
   ],
 
   imports: [

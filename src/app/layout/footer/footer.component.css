@@ -1,0 +1,32 @@
+footer{
+  height: 160px;
+  background-image: url("/assets/img/header_bg.jpg");
+  background-size: cover;
+  text-align: center;
+  line-height: 160px
+}
+
+
+@media screen and (max-width: 1200px) {
+
+  footer{
+    height: 120px; 
+    line-height: 120px;
+  }
+  footer img {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+
+  footer img {
+    width: 275px;
+  }
+
+  footer{
+    height: 80px; 
+    line-height: 80px;  
+  }
+
+}
