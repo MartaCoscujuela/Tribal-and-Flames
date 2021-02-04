@@ -33,6 +33,8 @@ import { ClaimComponent } from './sections/home/claim/claim.component';
 import { InstagramComponent } from './sections/home/instagram/instagram.component';
 import { ContactComponent } from './sections/home/contact/contact.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { BannerComponent } from './sections/aboutribal/banner/banner.component';
+import { WhatisComponent } from './sections/aboutribal/whatis/whatis.component';
 
 
 @NgModule({
@@ -61,7 +63,9 @@ import { FooterComponent } from './layout/footer/footer.component';
     ClaimComponent,
     InstagramComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    BannerComponent,
+    WhatisComponent,
   ],
 
   imports: [

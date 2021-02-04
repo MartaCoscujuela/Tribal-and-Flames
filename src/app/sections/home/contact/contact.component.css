@@ -11,13 +11,13 @@
   text-align: center;
 }
 
-span{
-  max-width: 600px;
+p{
+  max-width: 700px;
   margin: auto;
 }
 
 @media (max-width: 600px) {
-  .contact{
+  .contact p{
     font-size: 15px;
     padding: 1em;
   }

@@ -8,6 +8,7 @@
     color:#fff;
     z-index: 1000;
     text-align:center;
+    background-color: white;
     background-image: url("/assets/img/header_bg.jpg");
   }
 
