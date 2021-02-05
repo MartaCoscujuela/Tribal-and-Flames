@@ -62,7 +62,7 @@ nav{
 }
 
 .hamburger {
-  position: absolute;
+  position: fixed;
   margin-left: auto;
   width: 30px;
   height: 24px;
@@ -71,7 +71,7 @@ nav{
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  top:-52px;
+  top:28px;
   right: 20px;
 }
 
@@ -148,14 +148,21 @@ transform: rotate(45deg);
   /*.menu-container{
     display: none
   }*/
+
+
   li{
     display: block;
+    line-height: 60px;
+    font-size: 25px;
+    border-bottom: 1px solid #333;
   }
 
   .menu{
     background-color: black;
-    height: 210px;
+    height: 450px;
     transition: all 0.3s;
+    padding: 0.3em 1em;
+
   }
 
   .menu.hidden{
