@@ -35,6 +35,10 @@ import { ContactComponent } from './sections/home/contact/contact.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { BannerComponent } from './sections/aboutribal/banner/banner.component';
 import { WhatisComponent } from './sections/aboutribal/whatis/whatis.component';
+import { PrinciplesComponent } from './sections/aboutribal/principles/principles.component';
+import { ObjetivoComponent } from './sections/aboutribal/objetivo/objetivo.component';
+import { InterviewComponent } from './sections/aboutribal/interview/interview.component';
+import { CtaComponent } from './sections/aboutribal/cta/cta.component';
 
 
 @NgModule({
@@ -66,6 +70,10 @@ import { WhatisComponent } from './sections/aboutribal/whatis/whatis.component';
     FooterComponent,
     BannerComponent,
     WhatisComponent,
+    PrinciplesComponent,
+    ObjetivoComponent,
+    InterviewComponent,
+    CtaComponent,
   ],
 
   imports: [
