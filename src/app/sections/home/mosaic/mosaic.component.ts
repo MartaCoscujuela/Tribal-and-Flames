@@ -17,12 +17,8 @@ export class MosaicComponent implements OnInit {
   options = {
     id: 482704655,
     width: 1920,
-    loop: true,
-    controls: false,
     responsive: true,
-    autoplay: true,
-    preload: true,
-    muted: true
+    background: true
   };
 
   videoPlaying = false;

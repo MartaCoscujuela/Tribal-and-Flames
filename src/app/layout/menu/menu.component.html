@@ -1,5 +1,15 @@
 <div class="menu-container" [ngStyle]="{top: menuPos+'px'}" [ngClass]="{'solid-background': solidBackground}">
-  <ul id="menu">
+
+  <div class="hamburger d-block d-md-none" (click)="onToggleHamburger()" [ngClass]="{'hamburger--opened': !isMenuCollapsed}">
+    <div class="hamburger__slices">
+      <div class="hamburger__slice hamburger--slice-1"></div>
+      <div class="hamburger__slice hamburger--slice-2"></div>
+      <div class="hamburger__slice hamburger--slice-3"></div>
+      <div class="hamburger__slice hamburger--slice-4"></div>
+    </div>
+  </div>
+
+  <ul class="menu" [ngClass]="{'hidden':isMenuCollapsed}">
     <!--<li [routerLink]="['/']"
     routerLinkActive="active"
     fragment="about"

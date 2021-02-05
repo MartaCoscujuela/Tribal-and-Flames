@@ -81,7 +81,7 @@ h3 div{
 
 .fans{
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-content: center;
   flex-direction: column;
   padding-top: 2em;

@@ -72,7 +72,7 @@ export class LayoutComponent implements OnInit {
       this.maxHeaderHeight = 250;
       this.breakpointHeaderShrink = 170;
       this.posOpenTitle = 175;
-      this.posClosedTitle = 165;
+      this.posClosedTitle = 162;
       this.posOpenLogo = 20;
       this.posClosedLogo = 300;
 

@@ -13,4 +13,9 @@ export class MenuComponent {
   @Input() menuPos:number;
   @Input() solidBackground:boolean;
 
+  isMenuCollapsed: boolean = true;
+
+  onToggleHamburger(){
+    this.isMenuCollapsed = !this.isMenuCollapsed;
+  }
 }

@@ -22,7 +22,7 @@
   transition-property: height;
 }
 
-#menu{
+.menu{
   background: transparent;
   transition-duration:0.3s;
   transition-property: background;
@@ -36,7 +36,7 @@
   font-size: 27px;
 }
 
-#menu li{
+.menu li{
   font-family: 'Bebas Neue Regular';
 }
 
@@ -61,9 +61,71 @@ nav{
   margin-top: 500px;
 }
 
+.hamburger {
+  position: absolute;
+  margin-left: auto;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  top:-52px;
+  right: 20px;
+}
+
+
+.hamburger__slices {
+position: relative;
+width: 100%;
+height: 24px;
+}
+
+.hamburger__slices .hamburger__slice {
+background-color: white;
+position: absolute;
+width: 100%;
+height: 2px;
+-webkit-transition: all 0.2s ease-in-out;
+-o-transition: all 0.2s ease-in-out;
+transition: all 0.2s ease-in-out;
+}
+
+.hamburger--slice-2 {
+top: 11px;
+}
+
+.hamburger--slice-3 {
+top: 11px;
+}
+.hamburger--slice-4 {
+top: 22px;
+}
+
+.hamburger--opened .hamburger--slice-1 {
+opacity: 0;
+}
+
+.hamburger--opened .hamburger--slice-4 {
+opacity: 0;
+}
+
+
+.hamburger--opened .hamburger--slice-2 {
+-webkit-transform: rotate(-45deg);
+-ms-transform: rotate(-45deg);
+transform: rotate(-45deg);
+}
+
+.hamburger--opened .hamburger--slice-3 {
+-webkit-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg);
+}
 
 @media screen and (max-width: 1200px) {
-  #menu{
+  .menu{
     font-size: 20px;
   }
   .li{
@@ -72,7 +134,7 @@ nav{
 }
 
 @media screen and (max-width:992px) {
-  #menu{
+  .menu{
     font-size: 16px;
   }
 
@@ -83,7 +145,21 @@ nav{
 
 @media screen and (max-width: 768px) {
 
-  .menu-container{
+  /*.menu-container{
     display: none
+  }*/
+  li{
+    display: block;
+  }
+
+  .menu{
+    background-color: black;
+    height: 210px;
+    transition: all 0.3s;
+  }
+
+  .menu.hidden{
+    height: 0px;
+    transition: all 0.3s;
   }
 }
