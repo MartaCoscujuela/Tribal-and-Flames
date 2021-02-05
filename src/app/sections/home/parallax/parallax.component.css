@@ -61,5 +61,21 @@
     height: 150px;
   }
 
+  .parallax-bg .img{
+    background-size: 130%;
+  }
+
+
+  .parallax-img-0 div, .parallax-img-2 div,  .parallax-img-2 div{
+    background-position-x: 50%;
+  }
+
+
 }
 
+@media screen and (max-width: 400px) {
+
+  .parallax-bg{
+    height: 80px;
+  }
+}

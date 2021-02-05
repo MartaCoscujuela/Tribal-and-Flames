@@ -40,16 +40,23 @@ export class ParallaxComponent implements OnInit {
     const rect = this.parallax.nativeElement.getBoundingClientRect();
     this.top = rect.top
 
-    let edge = 220;
-    if (width >= 600){
-      edge = 220;
-    } else {
-      edge = 50
-    }
+    let maxEdge = 220;
+    let minEdge = 220;
 
-    this.offsetY1 = this.mapValues(-edge, edge, 0);
-    this.offsetY2 = this.mapValues(-edge, edge,  this.height/5);
-    this.offsetY3 = this.mapValues(-edge, edge,  this.height/2.5);
+    if (width >= 1920){
+      maxEdge = 300;
+      minEdge = 500
+    } else if (width >= 600){
+      maxEdge = 220;
+      minEdge = 400
+    } else {
+      maxEdge = 70;
+      minEdge = 150;
+
+    }
+    this.offsetY1 = this.mapValues(-maxEdge, minEdge, 0);
+    this.offsetY2 = this.mapValues(-maxEdge, minEdge,  this.height/5);
+    this.offsetY3 = this.mapValues(-maxEdge, minEdge,  this.height/2.5);
 
       // new_value = (old_value - old_bottom) / (old_top - old_bottom) * (new_top - new_bottom) + new_bottom
 
