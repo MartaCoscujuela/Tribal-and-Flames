@@ -54,7 +54,6 @@ li{
 
 .active{
   color: #7effac;
-  border-style: none;
 }
 
 nav{
@@ -166,7 +165,13 @@ transform: rotate(45deg);
   }
 
   .menu.hidden{
+    padding: 0;
     height: 0px;
     transition: all 0.3s;
   }
+  .menu-container{
+    background: none;
+
+  }
+
 }
