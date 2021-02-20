@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/data-bridge/data.service';
+import { TextData } from 'src/app/data-bridge/text.model';
 
 @Component({
   selector: 'app-intro',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IntroComponent implements OnInit {
 
-  constructor() { }
+  textData: TextData;
+  name: string = "home-intro";
+  lang: string = "esp";
+
+  constructor(public dataService: DataService) { }
 
   ngOnInit(): void {
+    this.getText();
   }
 
+  getText(){
+    this.dataService.getText(this.name).subscribe((text)=>{
+      this.textData = text;
+    });
+  }
 }

@@ -14,7 +14,8 @@ import { AdminCrewComponent } from './admin-sections/admin-crew/admin-crew.compo
 import { AdminDiscountsComponent } from './admin-sections/admin-discounts/admin-discounts.component';
 import { AdminShowsComponent } from './admin-sections/admin-shows/admin-shows.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AdminCourseComponent } from './admin-sections/admin-course/admin-course.component'
+import { AdminCourseComponent } from './admin-sections/admin-course/admin-course.component';
+import { TexteditorComponent } from './utils/texteditor/texteditor.component'
 
 
 
@@ -31,7 +32,8 @@ import { AdminCourseComponent } from './admin-sections/admin-course/admin-course
   AdminCrewComponent,
   AdminDiscountsComponent,
   AdminShowsComponent,
-  AdminCourseComponent
+  AdminCourseComponent,
+  TexteditorComponent
 ],
   imports: [
     CommonModule,

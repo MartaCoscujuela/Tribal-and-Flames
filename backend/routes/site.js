@@ -1,11 +1,15 @@
 const express = require("express")
 const checkAuth = require("../middelware/checkauth")
 const router = express.Router();
-
+const siteController = require("../controllers/site");
 
 router.get("/section", (req, res, next) =>{
   //devolvemos toda la info de la seccion
 });
+
+router.get("/text/:name", siteController.getText);
+
+router.post("/text", siteController.postText);
 
 router.get("/course", (req, res, next) => {
   //devolvemos la info del curso con sus clases

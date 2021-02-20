@@ -6,7 +6,8 @@ module.exports = {
     env: {
       NODE_ENV: "development",
       PORT: "3000",
-      SECRET_JWT: ""
+      SECRET_JWT: "",
+      BACKEND_URL: "localhost:3000/api"
     },
     env_production: {
       NODE_ENV: "production",

@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, NgForm } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-about',
@@ -8,18 +8,12 @@ import { FormControl, FormGroup, NgForm } from '@angular/forms';
 })
 export class AdminAboutComponent implements OnInit {
 
-  sectionForm: FormGroup;
-
   constructor() { }
-  text: string;
 
+  section = "about";
 
   ngOnInit(): void {
-    this.sectionForm = new FormGroup({
-      "description": new FormControl()
-    });
+
   }
 
-  onSubmit(){
-  }
 }
