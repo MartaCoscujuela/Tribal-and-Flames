@@ -1,6 +1,6 @@
-<div class="container">
 
-  <div class="row p-md-5">
+<div class="container">
+  <div class="row p-md-0">
 
     <div class="card col-12 p-0 mt-5 m-lg-3">
       <div class="card-header d-flex  justify-content-between d-flex align-items-center">
@@ -10,18 +10,8 @@
       </div>
 
       <div class="card-body">
-        <div *ngIf="status === 'success'" class="alert alert-success" role="alert">
-          Contenido actualizado correctamente
-        </div>
 
-        <div *ngIf="status === 'postingErr'" class="alert alert-danger" role="alert">
-          Error! No se ha podido actualizar el texto
-        </div>
-
-        <div *ngIf="status === 'loadingErr'" class="alert alert-danger" role="alert">
-          Error! No se ha podido descargar el texto
-        </div>
-
+        <app-error [status]="status"></app-error>
 
         <form [formGroup]="textForm"  (ngSubmit)="onSubmit()" >
           <div  *ngFor="let lang of langs">

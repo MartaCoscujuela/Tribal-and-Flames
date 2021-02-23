@@ -11,7 +11,7 @@ export class AdminAboutComponent implements OnInit {
   constructor() { }
 
   section = "about";
-
+  images  = ["img1", "img2", "img3", "img-home-mosaic-1"]
   ngOnInit(): void {
 
   }

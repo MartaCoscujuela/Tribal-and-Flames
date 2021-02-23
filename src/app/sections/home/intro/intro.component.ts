@@ -9,13 +9,14 @@ import { TextData } from 'src/app/data-bridge/text.model';
 })
 export class IntroComponent implements OnInit {
 
-  textData: TextData;
+  textData: TextData = {name:'', esp:'', eng:''}
   name: string = "home-intro";
   lang: string = "esp";
 
   constructor(public dataService: DataService) { }
 
   ngOnInit(): void {
+
     this.getText();
   }
 

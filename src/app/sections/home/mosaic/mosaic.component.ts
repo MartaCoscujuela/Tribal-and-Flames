@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import Player from '@vimeo/player';
+import { DataService } from 'src/app/data-bridge/data.service';
 
 @Component({
   selector: 'app-mosaic',
@@ -8,7 +9,11 @@ import Player from '@vimeo/player';
 })
 export class MosaicComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dataService: DataService) { }
+
+
+  imgProfesora:string
+
 
   player2 : Player;
 
@@ -26,28 +31,12 @@ export class MosaicComponent implements OnInit {
 
   ngOnInit(): void {
     this.player2 = new Player('video2', this.options);
+    this.dataService.getImg('img-home-mosaic-1').subscribe((response)=>{
+      this.imgProfesora = response.esp
+    }),
+    error =>{
+      console.log('error')
+    };
   }
 
-
-  @HostListener("window:scroll")
-  onWindowScroll(){
-   /* if (!this.playing){
-      this.player2.play();
-      this.playing = true;
-    }*/
-  }
-
- onClick(){
-/*
-    this.player.getPaused().then(paused => {
-      if (paused){
-        this.clickedPlay = true;
-        this.player.play();
-      } else {
-        this.player.pause();
-      }
-    }).catch(error =>{
-      console.log(error);
-    })*/
-  }
 }

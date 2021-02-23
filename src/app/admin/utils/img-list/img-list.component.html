@@ -1,0 +1,19 @@
+
+<div class="container">
+  <div class="row p-md-0">
+
+    <div class="card col-12 p-0 mt-5 m-lg-3">
+      <div class="card-header d-flex  justify-content-between d-flex align-items-center">
+       {{ name | uppercase }} - {{currentLang | uppercase}}
+        <button (click)=changeLang() class="btn btn-primary float-right">{{oppositeLang()}}</button>
+      </div>
+
+      <div class="card-body">
+       <app-error [status]="status"></app-error>
+
+
+       <app-single-img *ngFor="let img of images" [url]="img.url" [order]="img.order"></app-single-img>
+
+      </div>
+    </div>
+  </div>

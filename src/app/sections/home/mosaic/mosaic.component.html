@@ -1,5 +1,5 @@
 <div class="row about">
-  <div class="col-md-6 anna piece">
+  <div class="col-md-6 anna piece" [ngStyle]="{'background-image':'url('+imgProfesora+')'}" >
     <h2>NUESTRA PROFESORA</h2>
     <h3>Anna de Mas</h3>
     <button class="button-anna">CONOCER A ANNA</button>
@@ -19,7 +19,7 @@
   <p>Todos han sido estudiados en clase durante el curso regular.<br>
     ¡Tú también puedes formar parte de ellos!</p>
   <button class="button-shows">VER MÁS</button>
-  <div class="play" (click)="onClick()"><img *ngIf="!videoPlaying" src="/assets/img/shared/play.png"></div>
+  <div class="play"><img *ngIf="!videoPlaying" src="/assets/img/shared/play.png"></div>
 </div>
 
 <div class="fans col-12 piece">
