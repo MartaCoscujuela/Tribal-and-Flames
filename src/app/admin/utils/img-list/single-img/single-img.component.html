@@ -1,19 +1,14 @@
-{{url}}
-{{order}}
 <div class="card mb-3">
-  <div class="background col-lg-9"  [ngStyle]="{'background-image': 'url('+url+')'}">
+  <div class="background col-lg-9"  [ngStyle]="{'background-image': 'url('+getBackground+')'}">
+  </div>
+
+  <div class="buttons">
+    <button type="button" class="btn btn-primary m-2" (click)="deleteItem()"><fa-icon [icon]="iconTimes"></fa-icon></button>
+    <hr>
+    <button type="button" class="btn btn-primary m-2" [disabled]="isBottomItem()" (click)="changeOrder(-1)"><fa-icon [icon]="iconUp"></fa-icon></button>
+    <button type="button" class="btn btn-primary m-2" [disabled]="isTopItem()" (click)="changeOrder(1)"><fa-icon [icon]="iconDown"></fa-icon></button>
 
   </div>
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-  </div>
-</div>
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-  </div>
+
+
 </div>

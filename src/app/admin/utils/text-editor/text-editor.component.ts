@@ -1,17 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { error } from 'protractor';
 import { DataService } from 'src/app/data-bridge/data.service';
-import { isTypeOnlyImportOrExportDeclaration } from 'typescript';
 import { TextData } from '../../../data-bridge/text.model'
 
 @Component({
   selector: 'app-texteditor',
-  templateUrl: './texteditor.component.html',
-  styleUrls: ['./texteditor.component.css']
+  templateUrl: './text-editor.component.html',
+  styleUrls: ['./text-editor.component.css']
 })
 
-export class TexteditorComponent implements OnInit {
+export class TextEditorComponent implements OnInit {
 
   textForm: FormGroup;
   langs: string[] = ["esp", "eng"]

@@ -1,20 +1,20 @@
 const mongoose = require("mongoose");
 
-const imgSchema = mongoose.Schema(
+const listSchema = mongoose.Schema(
   {
-    ref: {
+    name: {
       type: String,
       required: true
     },
-    eng: {
+    eng: [{
       type: String,
       required: false
-    },
-    esp: {
+    }],
+    esp: [{
       type: String,
       required: false
-    }
+    }],
   }
 );
 
-module.exports = mongoose.model("Img", imgSchema);
+module.exports = mongoose.model("List", listSchema);

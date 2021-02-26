@@ -15,14 +15,14 @@ import { AdminDiscountsComponent } from './admin-sections/admin-discounts/admin-
 import { AdminShowsComponent } from './admin-sections/admin-shows/admin-shows.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminCourseComponent } from './admin-sections/admin-course/admin-course.component';
-import { TexteditorComponent } from './utils/texteditor/texteditor.component';
+import { TextEditorComponent } from './utils/text-editor/text-editor.component';
 import { ImgEditorComponent } from './utils/images-container/img-editor/img-editor.component';
 import { ImagesContainerComponent } from './utils/images-container/images-container.component';
 import { ErrorComponent } from './utils/error/error.component';
 import { ImgListComponent } from './utils/img-list/img-list.component';
 import { SingleImgComponent } from './utils/img-list/single-img/single-img.component';
-
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TextListComponent } from './utils/text-list/text-list.component';
 
 @NgModule({
   declarations: [
@@ -38,18 +38,21 @@ import { SingleImgComponent } from './utils/img-list/single-img/single-img.compo
   AdminDiscountsComponent,
   AdminShowsComponent,
   AdminCourseComponent,
-  TexteditorComponent,
+  TextEditorComponent,
   ImgEditorComponent,
   ImagesContainerComponent,
   ErrorComponent,
   ImgListComponent,
   SingleImgComponent,
+  TextListComponent,
+
 ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     ReactiveFormsModule,
-    EditorModule
+    EditorModule,
+    FontAwesomeModule
   ]
 })
 export class AdminModule { }

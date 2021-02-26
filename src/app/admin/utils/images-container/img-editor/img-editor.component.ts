@@ -2,7 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup, Validator, Validators } from '@angular/forms';
 import { DataService } from 'src/app/data-bridge/data.service';
 import { ImgData } from 'src/app/data-bridge/img.model';
-import { mimeType } from "./mime-type.validator";
+import { environment } from 'src/environments/environment';
+import { mimeType } from "../../mime-type.validator";
 
 @Component({
   selector: 'app-img-editor',
@@ -20,6 +21,7 @@ export class ImgEditorComponent implements OnInit {
   currentLang: string = "esp";
   imgData: ImgData;
   status: string = "";
+  IMG_URL = environment.IMAGES_URL;
 
   @Input() name;
 
@@ -68,11 +70,11 @@ export class ImgEditorComponent implements OnInit {
     this.imagePreviews = [
       {
         lang: "esp",
-        preview: this.imgData.esp
+        preview: this.IMG_URL +'/'+ this.imgData.esp
       },
       {
         lang: "eng",
-        preview: this.imgData.eng
+        preview: this.IMG_URL +'/'+ this.imgData.eng
       }
     ];
     this.getLangPreview();
@@ -92,6 +94,7 @@ export class ImgEditorComponent implements OnInit {
   }
 
   onImagePicked(event: Event){
+    this.status = ""
     const file = (event.target as HTMLInputElement).files[0];
     const field = this.currentLang;
     this.form.patchValue({[field]: file});
@@ -108,9 +111,9 @@ export class ImgEditorComponent implements OnInit {
 
   onSubmit(){
     const espValue = this.form.value.esp
-    if (!this.form.controls['eng'].value){
+ //   if (!this.form.controls['eng'].value){
       this.form.patchValue({eng: espValue});
-    }
+   // }
 
     if (this.form.invalid){
       this.status = 'postingErr'
@@ -129,12 +132,5 @@ export class ImgEditorComponent implements OnInit {
       console.log(error)
       this.status = 'postingErr'
     });
-    /*
-    this.isLoading = true;
-    if (this.mode === "create"){
-      this.postService.addPost(this.form.value.title, this.form.value.content, this.form.value.image);
-    } else {
-      this.postService.updatePost(this.postId, this.form.value.title, this.form.value.content, this.form.value.image);
-    }*/
   }
 }

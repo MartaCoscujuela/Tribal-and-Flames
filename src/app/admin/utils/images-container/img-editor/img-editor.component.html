@@ -1,8 +1,8 @@
     <div class="card">
       <div class="card-header d-flex  justify-content-between d-flex align-items-center">
-       {{ name | uppercase }} - {{currentLang | uppercase}}
-        <button (click)=changeLang() class="btn btn-primary float-right">{{oppositeLang()}}</button>
-      </div>
+       {{ name | uppercase }}<!--  - {{currentLang | uppercase}} -->
+<!--         <button (click)=changeLang() class="btn btn-primary float-right">{{oppositeLang()}}</button>
+ -->      </div>
 
       <div class="card-body">
         <app-error [status]="status"></app-error>
@@ -17,8 +17,7 @@
               <img [src]="currentPreview" [alt]="form.value.title">
             </div>
           </div>
-       </div>
-
+        </div>
         <button type="submit" class="btn btn-primary m-2">Guardar</button>
       </form>
     </div>

@@ -1,6 +1,9 @@
 const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
+mongoose.set('useFindAndModify', false);
+
+
 const errorHandler = require('errorhandler');
 const bodyParser = require("body-parser")
 
@@ -9,6 +12,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 const adminRoutes = require("./routes/admin");
 const authRoutes = require("./routes/auth");
 const siteRoutes = require("./routes/site");
+const { Console } = require("console");
 
 const app = express();
 
