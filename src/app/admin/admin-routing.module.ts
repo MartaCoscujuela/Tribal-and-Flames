@@ -13,35 +13,35 @@ import { AdminDiscountsComponent } from './admin-sections/admin-discounts/admin-
 import { AdminShowsComponent } from './admin-sections/admin-shows/admin-shows.component';
 
 
-const routes : Routes = [
+const routes: Routes = [
   {
-    path: "", canActivate:[AdminGuard], component: AdminComponent, children: [
+    path: '', canActivate: [AdminGuard], component: AdminComponent, children: [
       {
-        path: "", component: AdminSectionsComponent
+        path: '', component: AdminSectionsComponent
       },
       {
-        path: "home", component: AdminHomeComponent
+        path: 'home', component: AdminHomeComponent
       },
       {
-        path: "about", component: AdminAboutComponent
+        path: 'about', component: AdminAboutComponent
       },
       {
-        path: "courses", component: AdminCoursesComponent
+        path: 'courses', component: AdminCoursesComponent
       },
       {
-        path: "course/:id", component: AdminCourseComponent
+        path: 'course/:id', component: AdminCourseComponent
       },
       {
-        path: "annademas", component: AdminAnnademasComponent
+        path: 'annademas', component: AdminAnnademasComponent
       },
       {
-        path: "crew", component: AdminCrewComponent
+        path: 'crew', component: AdminCrewComponent
       },
       {
-        path: "shows", component: AdminShowsComponent
+        path: 'shows', component: AdminShowsComponent
       },
       {
-        path: "discounts", component: AdminDiscountsComponent
+        path: 'discounts', component: AdminDiscountsComponent
       },
     ]
   },

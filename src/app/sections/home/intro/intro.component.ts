@@ -9,9 +9,9 @@ import { TextData } from 'src/app/data-bridge/text.model';
 })
 export class IntroComponent implements OnInit {
 
-  textData: TextData = {name:'', esp:'', eng:''}
-  name: string = "home-intro";
-  lang: string = "esp";
+  textData: TextData = {name: '', esp: '', eng: ''};
+  name = 'home-intro';
+  lang = 'esp';
 
   constructor(public dataService: DataService) { }
 
@@ -21,7 +21,7 @@ export class IntroComponent implements OnInit {
   }
 
   getText(){
-    this.dataService.getText(this.name).subscribe((text)=>{
+    this.dataService.getText(this.name).subscribe((text) => {
       this.textData = text;
     });
   }

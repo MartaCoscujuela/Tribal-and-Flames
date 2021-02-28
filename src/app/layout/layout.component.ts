@@ -4,13 +4,10 @@ import { Component, OnInit, HostListener } from '@angular/core';
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.css']
+  styleUrls: ['./layout.component.css'],
 })
 export class LayoutComponent implements OnInit {
-
-  constructor() { }
-
-    //vars to control header anim
+  // vars to control header anim
   maxHeaderHeight = 450;
   headerHeight = this.maxHeaderHeight;
   breakpointHeaderShrink = 300;
@@ -23,32 +20,31 @@ export class LayoutComponent implements OnInit {
   posOpenLogo = 50;
   posClosedLogo = 300;
 
-
   posOpenIcons = 70;
   posClosedIcons = 30;
 
+  constructor() {}
+
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    this.shrinkHeader();
+  }
+
+  @HostListener('window:resize')
+  onWindowResize() {
+    this.resizeHeader();
+    this.shrinkHeader();
+  }
 
   ngOnInit(): void {
     this.resizeHeader();
-    this.shrinkHeader()
-  }
-
-
-  @HostListener("window:scroll")
-  onWindowScroll(){
     this.shrinkHeader();
   }
 
-  @HostListener("window:resize")
-  onWindowResize(){
-    this.resizeHeader();
-    this.shrinkHeader();
-  }
-
-  resizeHeader(){
+  resizeHeader() {
     const width = window.innerWidth;
 
-    if (width >= 1200){
+    if (width >= 1200) {
       this.maxHeaderHeight = 450;
       this.breakpointHeaderShrink = 300;
       this.posOpenTitle = 318;
@@ -57,7 +53,6 @@ export class LayoutComponent implements OnInit {
       this.posClosedLogo = 300;
       this.posOpenIcons = 70;
       this.posClosedIcons = 30;
-
     } else if (width >= 992) {
       this.maxHeaderHeight = 300;
       this.breakpointHeaderShrink = 200;
@@ -67,7 +62,6 @@ export class LayoutComponent implements OnInit {
       this.posClosedLogo = 300;
       this.posOpenIcons = 30;
       this.posClosedIcons = 7;
-
     } else {
       this.maxHeaderHeight = 250;
       this.breakpointHeaderShrink = 170;
@@ -81,17 +75,16 @@ export class LayoutComponent implements OnInit {
     }
   }
 
-  shrinkHeader(){
+  shrinkHeader() {
     const offset = window.pageYOffset;
-    if (offset < this.breakpointHeaderShrink){
+    if (offset < this.breakpointHeaderShrink) {
       this.headerHeight = this.maxHeaderHeight - offset;
-      this.linearTransition = 1-(offset/this.breakpointHeaderShrink);
+      this.linearTransition = 1 - offset / this.breakpointHeaderShrink;
       this.solidMenuBackground = false;
     } else {
       this.headerHeight = this.maxHeaderHeight - this.breakpointHeaderShrink;
       this.linearTransition = 0;
       this.solidMenuBackground = true;
     }
-
   }
 }

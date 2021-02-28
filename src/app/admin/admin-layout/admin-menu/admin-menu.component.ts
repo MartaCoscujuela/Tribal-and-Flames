@@ -5,31 +5,25 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './admin-menu.component.html',
   styleUrls: ['./admin-menu.component.css']
 })
-export class AdminMenuComponent implements OnInit {
+export class AdminMenuComponent{
 
   areSubsectionsOpen: boolean;
   areSubusersOpen: boolean;
   areSubcoursesOpen: boolean;
 
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  openSubsections(){
+  openSubsections(): void{
     this.areSubusersOpen = false;
     this.areSubcoursesOpen = false;
     this.areSubsectionsOpen = !this.areSubsectionsOpen;
   }
 
-  openSubusers(){
+  openSubusers(): void{
     this.areSubsectionsOpen = false;
     this.areSubcoursesOpen = false;
     this.areSubusersOpen = !this.areSubusersOpen;
   }
 
-  openSubcourses(){
+  openSubcourses(): void{
     this.areSubsectionsOpen = false;
     this.areSubusersOpen = false;
 

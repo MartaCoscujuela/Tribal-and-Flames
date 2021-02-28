@@ -12,9 +12,9 @@ export class AdminCourseComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params)=>{
-      this.course = params["id"];
-    })
+    this.route.params.subscribe((params) => {
+      this.course = params.id;
+    });
   }
 
 }

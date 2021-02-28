@@ -4,25 +4,24 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
+  // vars to control menu position
+  @Input() menuPos: number;
+  @Input() solidBackground: boolean;
 
-  constructor(private router: Router) { }
+  isMenuCollapsed = true;
 
-  //vars to control menu position
-  @Input() menuPos:number;
-  @Input() solidBackground:boolean;
+  constructor(private router: Router) {}
 
-  isMenuCollapsed: boolean = true;
-
-  ngOnInit(){
+  ngOnInit() {
     this.router.events.subscribe((val) => {
-     this.isMenuCollapsed = true;
-  });
- }
+      this.isMenuCollapsed = true;
+    });
+  }
 
-  onToggleHamburger(){
+  onToggleHamburger() {
     this.isMenuCollapsed = !this.isMenuCollapsed;
   }
 }

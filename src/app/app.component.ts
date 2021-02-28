@@ -11,9 +11,8 @@ import { Observable } from 'rxjs';
 export class AppComponent implements OnInit{
   title = 'tribal-and-flames';
 
-  constructor(){}
 
-  ngOnInit(){
+  ngOnInit(): void {
     /*const customObservable = new Observable( observer => {
 
       let count = 0;

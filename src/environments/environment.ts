@@ -4,8 +4,10 @@
 
 export const environment = {
   production: false,
-  BACKEND_URL: "http://localhost:3000/api",
-  IMAGES_URL: "http://localhost:3000/images"
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  BACKEND_URL: 'http://localhost:3000/api',
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  IMAGES_URL: 'http://localhost:3000/images',
 };
 
 /*

@@ -1,136 +1,133 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostBinding } from '@angular/core';
 import { FormControl, FormGroup, Validator, Validators } from '@angular/forms';
 import { DataService } from 'src/app/data-bridge/data.service';
 import { ImgData } from 'src/app/data-bridge/img.model';
 import { environment } from 'src/environments/environment';
-import { mimeType } from "../../mime-type.validator";
+import { mimeType } from '../../mime-type.validator';
 
 @Component({
   selector: 'app-img-editor',
-  host: {
-    class: 'col-lg-4 col-md-6 p-2 mt-3'
-  },
   templateUrl: './img-editor.component.html',
-  styleUrls: ['./img-editor.component.css']
+  styleUrls: ['./img-editor.component.css'],
 })
 export class ImgEditorComponent implements OnInit {
-
-  constructor(public dataService: DataService) { }
-
-  langs: string[] = ["esp", "eng"]
-  currentLang: string = "esp";
-  imgData: ImgData;
-  status: string = "";
-  IMG_URL = environment.IMAGES_URL;
-
   @Input() name;
+
+  @HostBinding('class') class = 'col-lg-4 col-md-6 p-2 mt-3';
+  langs: string[] = ['esp', 'eng'];
+  currentLang = 'esp';
+  imgData: ImgData;
+  status = '';
+  imgUrl = environment.IMAGES_URL;
 
   form: FormGroup;
   imagePreviews = [
     {
-      lang: "esp",
-      preview: ""
+      lang: 'esp',
+      preview: '',
     },
     {
-      lang: "eng",
-      preview: ""
-    }
+      lang: 'eng',
+      preview: '',
+    },
   ];
   currentPreview: string;
-
+  constructor(public dataService: DataService) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      'esp': new FormControl(null, {
+      esp: new FormControl(null, {
         validators: [Validators.required],
-        asyncValidators: [mimeType]
+        asyncValidators: [mimeType],
       }),
-      'eng': new FormControl(null, {
+      eng: new FormControl(null, {
         validators: [Validators.required],
-        asyncValidators: [mimeType]
+        asyncValidators: [mimeType],
       }),
     });
     this.getImg();
   }
 
-  getImg(){
-    this.dataService.getImg(this.name).subscribe(result =>{
-      this.imgData = result;
-      this.setImg();
-    },
-    error=>{
-      console.log(error);
-    });
+  getImg() {
+    this.dataService.getImg(this.name).subscribe(
+      (result) => {
+        this.imgData = result;
+        this.setImg();
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
-  setImg(){
-    this.form.patchValue({esp: this.imgData.esp});
-    this.form.patchValue({eng: this.imgData.eng});
+  setImg() {
+    this.form.patchValue({ esp: this.imgData.esp });
+    this.form.patchValue({ eng: this.imgData.eng });
 
     this.imagePreviews = [
       {
-        lang: "esp",
-        preview: this.IMG_URL +'/'+ this.imgData.esp
+        lang: 'esp',
+        preview: this.imgUrl + '/' + this.imgData.esp,
       },
       {
-        lang: "eng",
-        preview: this.IMG_URL +'/'+ this.imgData.eng
-      }
+        lang: 'eng',
+        preview: this.imgUrl + '/' + this.imgData.eng,
+      },
     ];
     this.getLangPreview();
   }
-  oppositeLang(){
-    return this.currentLang === "esp" ? "eng" : "esp";
+  oppositeLang() {
+    return this.currentLang === 'esp' ? 'eng' : 'esp';
   }
 
-  changeLang(){
+  changeLang() {
     this.currentLang = this.oppositeLang();
     this.getLangPreview();
   }
 
-  getLangPreview(){
-    const currentLangPreview = this.imagePreviews.find(imgpv => (imgpv.lang === this.currentLang));
-    this.currentPreview = currentLangPreview.preview
+  getLangPreview() {
+    const currentLangPreview = this.imagePreviews.find((imgpv) => imgpv.lang === this.currentLang);
+    this.currentPreview = currentLangPreview.preview;
   }
 
-  onImagePicked(event: Event){
-    this.status = ""
+  onImagePicked(event: Event) {
+    this.status = '';
     const file = (event.target as HTMLInputElement).files[0];
     const field = this.currentLang;
-    this.form.patchValue({[field]: file});
+    this.form.patchValue({ [field]: file });
     this.form.get(field).updateValueAndValidity();
     const reader = new FileReader();
-    reader.onload = () =>{
-      const preview = this.imagePreviews.find(imgpv => (imgpv.lang == this.currentLang));
+    reader.onload = () => {
+      const preview = this.imagePreviews.find((imgpv) => imgpv.lang === this.currentLang);
       preview.preview = reader.result as string;
       this.currentPreview = preview.preview;
-    }
+    };
     reader.readAsDataURL(file);
   }
 
+  onSubmit() {
+    const espValue = this.form.value.esp;
+    //   if (!this.form.controls['eng'].value){
+    this.form.patchValue({ eng: espValue });
+    // }
 
-  onSubmit(){
-    const espValue = this.form.value.esp
- //   if (!this.form.controls['eng'].value){
-      this.form.patchValue({eng: espValue});
-   // }
+    if (this.form.invalid) {
+      this.status = 'postingErr';
 
-    if (this.form.invalid){
-      this.status = 'postingErr'
-
-      return
+      return;
     }
 
-    this.dataService.postImg(this.name, this.form.value.esp, this.form.value.eng )
-    .subscribe((response)=>{
-      console.log(response);
-      this.imgData = response;
-      this.setImg();
-      this.status = 'success'
-    },
-    error =>{
-      console.log(error)
-      this.status = 'postingErr'
-    });
+    this.dataService.postImg(this.name, this.form.value.esp, this.form.value.eng).subscribe(
+      (response) => {
+        console.log(response);
+        this.imgData = response;
+        this.setImg();
+        this.status = 'success';
+      },
+      (error) => {
+        console.log(error);
+        this.status = 'postingErr';
+      }
+    );
   }
 }

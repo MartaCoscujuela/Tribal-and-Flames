@@ -1,21 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-admin-header',
   templateUrl: './admin-header.component.html',
-  styleUrls: ['./admin-header.component.css']
+  styleUrls: ['./admin-header.component.css'],
 })
-export class AdminHeaderComponent implements OnInit {
-
+export class AdminHeaderComponent {
   public isMenuCollapsed = true;
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  toggleHamburguer(){
-    console.log("opens");
+  toggleHamburguer(): void {
     this.isMenuCollapsed = !this.isMenuCollapsed;
   }
 }

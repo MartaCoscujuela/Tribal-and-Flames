@@ -1,19 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-admin-about',
   templateUrl: './admin-about.component.html',
   styleUrls: ['./admin-about.component.css']
 })
-export class AdminAboutComponent implements OnInit {
+export class AdminAboutComponent {
 
-  constructor() { }
-
-  section = "about";
-  images  = ["img1", "img2", "img-home-mosaic-1"]
-  ngOnInit(): void {
-
-  }
+  section = 'about';
+  images  = ['img1', 'img2', 'img-home-mosaic-1'];
 
 }

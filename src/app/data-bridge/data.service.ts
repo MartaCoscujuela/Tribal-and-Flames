@@ -2,105 +2,103 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { from, Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { TextData } from './text.model'
-import { ImgData } from './img.model'
-import { ListData } from './list.model'
-import { SliderData, SliderImgData } from './slider.model'
+import { TextData } from './text.model';
+import { ImgData } from './img.model';
+import { ListData } from './list.model';
+import { SliderData } from './slider.model';
 
-const  BACKEND_URL = environment.BACKEND_URL;
+const BACKEND_URL = environment.BACKEND_URL;
 
-@Injectable(
-  {
-    providedIn: "root"
-  }
-)
-
+@Injectable({
+  providedIn: 'root',
+})
 export class DataService {
-
-  private lang: string = "esp";
+  private lang = 'esp';
   private langListener = new Subject<string>();
 
-  constructor(private http: HttpClient, private router: Router){}
+  constructor(private http: HttpClient, private router: Router) {}
 
-  changeLang(){
-    if (this.lang == "esp"){
-      this.lang = "eng";
+  changeLang(): void {
+    if (this.lang === 'esp') {
+      this.lang = 'eng';
     } else {
-      this.lang = "esp";
+      this.lang = 'esp';
     }
     return this.langListener.next(this.lang);
   }
 
-  getLangListener(){
+  getLangListener(): Subject<string> {
     return this.langListener;
   }
-  postText(name:string, esp:string, eng: string){
-    const textData: TextData = { name, esp, eng}
-    return this.http.post<{message: string, text: TextData}>(BACKEND_URL + "/site/text", textData);
+  postText(name: string, esp: string, eng: string): Observable<{ message: string; text: TextData }> {
+    const textData: TextData = { name, esp, eng };
+    return this.http.post<{ message: string; text: TextData }>(BACKEND_URL + '/site/text', textData);
   }
 
-  getText(name: string){
+  getText(name: string): Observable<TextData> {
     return this.http.get<{
-      _id: string,
-      name: string,
-      esp: string,
-      eng: string
-    }>(BACKEND_URL + "/site/text/" + name);
+      _id: string;
+      name: string;
+      esp: string;
+      eng: string;
+    }>(BACKEND_URL + '/site/text/' + name);
   }
 
-  postImg(name:string, esp: File | string, eng: File | string){
+  postImg(name: string, esp: File | string, eng: File | string): Observable<ImgData> {
     let imgData: ImgData | FormData;
-    if (typeof(esp) === 'object' || typeof(eng) === 'object'){
+    if (typeof esp === 'object' || typeof eng === 'object') {
       imgData = new FormData();
-      imgData.append("ref", name);
+      imgData.append('ref', name);
       console.log(esp);
 
-      if (typeof(esp) === 'object'){
+      if (typeof esp === 'object') {
         console.log(esp);
-        imgData.append("esp", esp, name+"_esp")
+        imgData.append('esp', esp, name + '_esp');
       } else {
-        imgData.append("esp", esp);
+        imgData.append('esp', esp);
       }
-      (typeof(eng) === 'object') ? imgData.append("eng", eng, name+"_eng") : imgData.append("eng", eng);
+      if (typeof eng === 'object') {
+        imgData.append('eng', eng, name + '_eng');
+      } else {
+        imgData.append('eng', eng);
+      }
     } else {
       imgData = {
         ref: name,
         esp: esp as string,
         eng: eng as string,
-      }
+      };
     }
     return this.http.post<ImgData>(BACKEND_URL + '/site/img', imgData);
   }
 
-  getImg(name:string){
-    return this.http.get<ImgData>(BACKEND_URL+"/site/img/"+name)
+  getImg(name: string): Observable<ImgData> {
+    return this.http.get<ImgData>(BACKEND_URL + '/site/img/' + name);
   }
 
-  postSlider(slider:SliderData){
-    let formData
-
-    formData = new FormData()
-    formData.append("ref", slider.ref);
-    slider.esp.forEach(img => {
-      console.log(typeof(img));
-      if (img.updated){
+  postSlider(slider: SliderData): Observable<SliderData> {
+    const formData = new FormData();
+    formData.append('ref', slider.ref);
+    slider.esp.forEach((img) => {
+      console.log(typeof img);
+      if (img.updated) {
         console.log(img.file);
-        formData.append("image", img.file, img.order)
+        formData.append('image', img.file as Blob, img.order.toString());
       } else {
-        formData.append("image", JSON.stringify({img: img.img, order: img.order}))
+        formData.append('image', JSON.stringify({ img: img.img, order: img.order }));
       }
     });
     return this.http.post<SliderData>(BACKEND_URL + '/site/slider', formData);
   }
 
-  getSlider(name:string){
-    return this.http.get<SliderData>(BACKEND_URL+'/site/slider/'+ name);
+  getSlider(name: string): Observable<SliderData> {
+    return this.http.get<SliderData>(BACKEND_URL + '/site/slider/' + name);
   }
-  postSentences(name: string, esp: string[], eng: string[]){
-    const listData: ListData = { name, esp, eng}
-    console.log("send");
-    return this.http.post<{message: string, text: TextData}>(BACKEND_URL + "/site/list", listData);
+  postSentences(name: string, esp: string[], eng: string[]): Observable<{ message: string; text: TextData }> {
+    const listData: ListData = { name, esp, eng };
+    console.log('send');
+    return this.http.post<{ message: string; text: TextData }>(BACKEND_URL + '/site/list', listData);
   }
 }

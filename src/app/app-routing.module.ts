@@ -14,7 +14,7 @@ import { DiscountsComponent } from './sections/discounts/discounts.component';
 const routes: Routes = [
 
 {
-  path: "admin", loadChildren: ()=> import("./admin/admin.module").then(m => m.AdminModule)
+  path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
 },
 
 {
@@ -58,20 +58,20 @@ const routes: Routes = [
   ]
 },
 {
-  path: 'not-found', component: ErrorComponent, data: {message: "404 Page not found"}
+  path: 'not-found', component: ErrorComponent, data: {message: '404 Page not found'}
 },
 
 {
-  path: "**", redirectTo: "not-found"
+  path: '**', redirectTo: 'not-found'
 }
 ];
 
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    onSameUrlNavigation: "ignore",
-    anchorScrolling: "enabled",
-    scrollPositionRestoration: "enabled",
+    onSameUrlNavigation: 'ignore',
+    anchorScrolling: 'enabled',
+    scrollPositionRestoration: 'enabled',
     preloadingStrategy: PreloadAllModules
   })
   ],

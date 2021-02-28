@@ -12,8 +12,8 @@ export class CourseComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.route.params.subscribe(
-      (params: Params)=>{
-        console.log(params["id"]);
+      (params: Params) => {
+        console.log(params.id);
       }
     );
 

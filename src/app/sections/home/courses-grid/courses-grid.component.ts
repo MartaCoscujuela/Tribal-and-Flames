@@ -3,42 +3,33 @@ import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular
 @Component({
   selector: 'app-courses-grid',
   templateUrl: './courses-grid.component.html',
-  styleUrls: ['./courses-grid.component.css']
+  styleUrls: ['./courses-grid.component.css'],
 })
 export class CoursesGridComponent implements OnInit {
-
   @ViewChild('background', { static: true }) background: ElementRef;
 
-  visible: boolean = false;
+  visible = false;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
-  @HostListener("window:scroll")
-  onWindowScroll(){
+  @HostListener('window:scroll')
+  onWindowScroll() {
     this.checkIfShowBackground();
   }
 
-
-  @HostListener("window:resize")
-  onWindowResize(){
+  @HostListener('window:resize')
+  onWindowResize() {
     this.checkIfShowBackground();
-
   }
 
+  ngOnInit(): void {}
 
-  checkIfShowBackground(){
+  checkIfShowBackground() {
     const rect = this.background.nativeElement.getBoundingClientRect();
-    if (
-      
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-    ){
+    if (rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)) {
       this.visible = true;
     } else {
       this.visible = false;
-
     }
   }
 }

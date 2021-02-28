@@ -1,5 +1,5 @@
 export interface ListData {
-  name: string,
-  esp: string[],
-  eng: string[]
+  name: string;
+  esp: string[];
+  eng: string[];
 }

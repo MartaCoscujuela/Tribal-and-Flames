@@ -1,5 +1,5 @@
 export interface ImgData {
-  ref: string,
-  esp: string,
-  eng: string
+  ref: string;
+  esp: string;
+  eng: string;
 }

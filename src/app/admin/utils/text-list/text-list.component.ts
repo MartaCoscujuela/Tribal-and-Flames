@@ -10,12 +10,12 @@ import { DataService } from 'src/app/data-bridge/data.service';
 })
 export class TextListComponent implements OnInit {
 
-  public form: FormGroup
-  status:string
-  name:string = "intro"
-  currentLang:  string = "esp"
+  public form: FormGroup;
+  status: string;
+  name = 'intro';
+  currentLang = 'esp';
 
-  iconTimes = faTimes
+  iconTimes = faTimes;
   constructor(private formBuilder: FormBuilder, private dataService: DataService) { }
 
   ngOnInit(): void {
@@ -27,26 +27,26 @@ export class TextListComponent implements OnInit {
   }
 
   get sentences(){
-    return this.form.get('sentences') as FormArray
+    return this.form.get('sentences') as FormArray;
   }
 
   addSentence(){
-    this.sentences.push(this.formBuilder.control('', [Validators.required]))
-    this.status = ''
+    this.sentences.push(this.formBuilder.control('', [Validators.required]));
+    this.status = '';
   }
 
   onSubmit(){
     if (this.form.invalid){
-      this.status = "postingErr";
-      return
+      this.status = 'postingErr';
+      return;
     }
-    this.dataService.postSentences(this.name,this.sentences.value, this.sentences.value ).subscribe((response)=>{
-      console.log(response)
-    })
+    this.dataService.postSentences(this.name, this.sentences.value, this.sentences.value ).subscribe((response) => {
+      console.log(response);
+    });
   }
 
 
-  deleteItem(index:number){
+  deleteItem(index: number){
     this.sentences.removeAt(index);
 
   }

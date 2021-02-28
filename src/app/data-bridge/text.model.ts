@@ -1,5 +1,5 @@
 export interface TextData {
-  name: string,
-  esp: string,
-  eng: string
+  name: string;
+  esp: string;
+  eng: string;
 }
