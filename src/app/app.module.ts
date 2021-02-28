@@ -21,7 +21,7 @@ import { MenuComponent } from './layout/menu/menu.component';
 import { ShowsComponent } from './sections/shows/shows.component';
 import { CourseComponent } from './sections/courses/course/course.component';
 import { LayoutComponent } from './layout/layout.component';
-import { ErrorComponent } from './error/error.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { VimeoComponent } from './vimeo/vimeo.component';
 import { ParallaxComponent } from './sections/home/parallax/parallax.component';
@@ -40,7 +40,6 @@ import { ObjetivoComponent } from './sections/aboutribal/objetivo/objetivo.compo
 import { InterviewComponent } from './sections/aboutribal/interview/interview.component';
 import { CtaComponent } from './sections/aboutribal/cta/cta.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +56,7 @@ import { CtaComponent } from './sections/aboutribal/cta/cta.component';
     ShowsComponent,
     CourseComponent,
     LayoutComponent,
-    ErrorComponent,
+    ErrorPageComponent,
     VimeoComponent,
     ParallaxComponent,
     StatementsComponent,
@@ -76,15 +75,8 @@ import { CtaComponent } from './sections/aboutribal/cta/cta.component';
     CtaComponent,
   ],
 
-  imports: [
-    BrowserModule,
-    FontAwesomeModule,
-    SlickCarouselModule,
-    AppRoutingModule,
-    HttpClientModule,
-    NgbModule
-  ],
+  imports: [BrowserModule, FontAwesomeModule, SlickCarouselModule, AppRoutingModule, HttpClientModule, NgbModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
