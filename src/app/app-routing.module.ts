@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AboutribalComponent } from './sections/aboutribal/aboutribal.component';
-import { CoursesComponent } from './sections/courses/courses.component';
-import { CourseComponent } from './sections/courses/course/course.component';
-import { HomeComponent } from './sections/home/home.component';
-import { ShowsComponent } from './sections/shows/shows.component';
+import { AboutribalComponent } from './sections/pages/aboutribal/aboutribal.component';
+import { CoursesComponent } from './sections/pages/courses/courses.component';
+import { CourseComponent } from './sections/pages/courses/course/course.component';
+import { HomeComponent } from './sections/pages/home/home.component';
+import { ShowsComponent } from './sections/pages/shows/shows.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { LayoutComponent } from './layout/layout.component';
-import { AboutannaComponent } from './sections/aboutanna/aboutanna.component';
-import { CrewComponent } from './sections/crew/crew.component';
-import { DiscountsComponent } from './sections/discounts/discounts.component';
+import { AboutannaComponent } from './sections/pages/aboutanna/aboutanna.component';
+import { CrewComponent } from './sections/pages/crew/crew.component';
+import { DiscountsComponent } from './sections/pages/discounts/discounts.component';
 
 const routes: Routes = [
   {

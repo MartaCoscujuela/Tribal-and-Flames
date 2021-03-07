@@ -1,34 +1,32 @@
-.menu{
+.menu {
   position: sticky;
   top: 0;
 }
 
-.subsections, .subusers, .subcourses{
+.subsections,
+.subusers,
+.subcourses {
   height: 0px;
-  transition: all .3s;
+  transition: all 0.3s;
   overflow: hidden;
 }
 
-.selected-option ul{
-  height: 250px;
-  transition: all .3s;
-
+.selected-option ul {
+  height: 400px;
+  transition: all 0.3s;
 }
 
-
-.selected-option>span{
+.selected-option > span {
   background-color: #ff693a;
   font-weight: bold;
 }
 
-
-ul{
+ul {
   margin: 0;
   padding: 0;
-
 }
 
-li{
+li {
   text-decoration: none;
   color: white;
   width: bold;
@@ -38,25 +36,35 @@ li{
   text-align: left;
   cursor: pointer;
   border-bottom: 1px solid #282b2e;
-
 }
 
-.first-level, .second-level{
+li li {
+  border-bottom: 1px solid #282b2e;
+}
+
+.selected-option {
+  border-bottom: none;
+}
+.first-level,
+.second-level {
   display: block;
   padding: 1em;
 }
 
-.first-level:hover{
+.first-level:hover {
   background-color: #ff693a;
   font-weight: bold;
-
 }
 
-.subsections>li, .subusers>li, .subcourses>li{
+.subsections > li,
+.subusers > li,
+.subcourses > li {
   display: block;
   padding: 0.8em 2em;
 }
 
-.subsections>li:hover, .subusers>li:hover{
+.subsections > li:hover,
+.subusers > li:hover,
+.subcourses > li:hover {
   background-color: #282b2e;
 }

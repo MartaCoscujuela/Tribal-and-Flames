@@ -7,7 +7,7 @@ export interface SliderData {
 }
 
 export interface SliderImgData {
-  img: string;
+  img: string | Blob;
   order: number;
   updated: boolean;
   file: Blob;

@@ -9,6 +9,6 @@ export class AdminHeaderComponent {
   public isMenuCollapsed = true;
 
   toggleHamburguer(): void {
-    this.isMenuCollapsed = !this.isMenuCollapsed;
+    this.isMenuCollapsed = !this.isMenuCollapsed
   }
 }

@@ -1,0 +1,10 @@
+<div class="bottom-reel" [ngStyle]="{ 'background-image': backgroundImage }">
+  <h2>{{ title }}</h2>
+  <p>{{ subtitle }}</p>
+
+  <ngx-slick-carousel class="carousel" [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let slide of slides; let i = index" class="slide">
+      <div class="video"><app-vimeo [videoId]="videoId" [key]="i" [width]="400"></app-vimeo></div>
+    </div>
+  </ngx-slick-carousel>
+</div>

@@ -1,26 +1,34 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const lessonSchema = mongoose.Schema({
-  lessonName: [
-    {
-      lang: {
-        type: String,
-        required: true
-      },
-      name: {
-        type: String,
-        required: true
-      }
-    }
-  ],
+  name_esp: {
+    type: String,
+    required: true,
+  },
+  name_eng: {
+    type: String,
+    required: true,
+  },
+  description_esp: {
+    type: String,
+    required: true,
+  },
+  description_eng: {
+    type: String,
+    required: true,
+  },
   url: {
     type: String,
-    required: true
   },
   price: {
     type: String,
-    required: true
-  }
-})
+  },
+  image_esp: {
+    type: String,
+  },
+  image_eng: {
+    type: String,
+  },
+});
 
-module.exports = mongoose.model("Lesson", lessonSchema);
+module.exports = mongoose.model('Lesson', lessonSchema);
