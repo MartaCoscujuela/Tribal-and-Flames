@@ -50,6 +50,7 @@ import { CourseCardComponent } from './sections/pages/courses/course-card/course
 import { BottomVideoComponent } from './sections/shared-components/bottom-video/bottom-video.component';
 import { BottomReelComponent } from './sections/shared-components/bottom-reel/bottom-reel.component';
 import { InputMailComponent } from './sections/shared-components/input-mail/input-mail.component';
+import { ShowtimeComponent } from './sections/pages/shows/showtime/showtime.component';
 
 @NgModule({
   declarations: [
@@ -92,6 +93,7 @@ import { InputMailComponent } from './sections/shared-components/input-mail/inpu
     BottomVideoComponent,
     InputMailComponent,
     BottomReelComponent,
+    ShowtimeComponent,
   ],
 
   imports: [

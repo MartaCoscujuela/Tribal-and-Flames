@@ -1,13 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-interview',
   templateUrl: './interview.component.html',
-  styleUrls: ['./interview.component.css'],
+  styleUrls: ['./interview.component.css']
 })
 export class InterviewComponent implements OnInit {
-  videoId = 482704655;
-
+  videoId = 521410494
   constructor() {}
 
   ngOnInit(): void {}

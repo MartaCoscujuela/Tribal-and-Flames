@@ -26,10 +26,26 @@ p {
 
 ngx-slick-carousel {
   max-width: 1200px;
+  width: 80%;
   margin: auto;
+}
+
+::ng-deep.wrapper{
+  padding: 0 1em;
+  min-height: 290px;
+}
+
+::ng-deep.slick-arrow::before {
+  content: url('./../../../../assets/img/shared/arrow.png');
+}
+
+::ng-deep.slick-prev {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
 }
 
 .video {
   max-width: 550px;
   margin: 20px auto 0 auto;
 }
+

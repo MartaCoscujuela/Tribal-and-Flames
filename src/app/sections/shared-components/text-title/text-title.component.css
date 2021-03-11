@@ -1,9 +1,10 @@
+
 ::ng-deep h2,
 ::ng-deep h2 p {
-  color: #fa413e;
   font-family: 'Bebas Neue Regular';
   font-size: 52px;
 }
+
 
 @media screen and (max-width: 1199px) {
   h2 {

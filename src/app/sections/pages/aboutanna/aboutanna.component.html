@@ -1,7 +1,16 @@
 <app-banner></app-banner>
 <div class="container p-5">
-  <app-text-title ref="anna-title" alignStyle="center"></app-text-title>
+  <app-text-title ref="anna-title" alignStyle="left" [textColor]="titleColor"></app-text-title>
+
+  <div class="img-container d-flex">
+    <div *ngFor="let image of images" class="col-12 col-md-4" >
+      <div class="top-image" [appImgBackground]="image">        
+      </div>
+    </div>
+  </div>
+
   <app-text ref="anna-desc" alignStyle="left" [twoColumns]="true"></app-text>
 </div>
-<app-bottom-reel [videoId]="videoId"></app-bottom-reel>
+<app-bottom-reel  title="SHOW REEL"
+subtitle="Estos son algunos de mis shows en solitario, pero puedes ver más en mi cana del Youtube o en Instagram." [videoId]="videoId"></app-bottom-reel>
 <app-cta></app-cta>

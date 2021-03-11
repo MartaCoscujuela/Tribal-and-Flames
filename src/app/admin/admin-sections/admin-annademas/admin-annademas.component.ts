@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-admin-annademas',
@@ -6,10 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-annademas.component.css']
 })
 export class AdminAnnademasComponent implements OnInit {
+  images = ['img-anna-intro-1', 'img-anna-intro-2', 'img-anna-intro-3']
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
