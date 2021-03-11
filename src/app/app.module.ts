@@ -51,6 +51,7 @@ import { BottomVideoComponent } from './sections/shared-components/bottom-video/
 import { BottomReelComponent } from './sections/shared-components/bottom-reel/bottom-reel.component';
 import { InputMailComponent } from './sections/shared-components/input-mail/input-mail.component';
 import { ShowtimeComponent } from './sections/pages/shows/showtime/showtime.component';
+import { ContratanosComponent } from './sections/pages/shows/contratanos/contratanos.component';
 
 @NgModule({
   declarations: [
@@ -94,6 +95,7 @@ import { ShowtimeComponent } from './sections/pages/shows/showtime/showtime.comp
     InputMailComponent,
     BottomReelComponent,
     ShowtimeComponent,
+    ContratanosComponent,
   ],
 
   imports: [

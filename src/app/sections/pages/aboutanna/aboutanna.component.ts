@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { Colors } from '../../shared-components/enumColors'
+import { Colors } from '../../enums/enumColors'
 
 @Component({
   selector: 'app-aboutanna',

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core'
 import { DataService } from 'src/app/data-bridge/data.service'
 import { TextData } from 'src/app/data-bridge/text.model'
-import { Colors } from '../enumColors'
+import { Colors } from '../../enums/enumColors'
 
 @Component({
   selector: 'app-text',

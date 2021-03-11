@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core'
-import { Colors } from 'src/app/sections/shared-components/enumColors'
+import { Colors } from 'src/app/sections/enums/enumColors'
 
 @Component({
   selector: 'app-showtime',

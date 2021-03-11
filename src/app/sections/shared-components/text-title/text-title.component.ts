@@ -2,7 +2,8 @@ import { Component, Input, OnInit } from '@angular/core'
 import { title } from 'process'
 import { DataService } from 'src/app/data-bridge/data.service'
 import { TextData } from 'src/app/data-bridge/text.model'
-import { Colors } from '../enumColors'
+import { Colors } from '../../enums/enumColors'
+import { Fonts } from '../../enums/enumFonts'
 
 @Component({
   selector: 'app-text-title',
@@ -13,6 +14,7 @@ export class TextTitleComponent implements OnInit {
   @Input() ref: string
   @Input() alignStyle: string
   @Input() textColor = Colors.red
+  @Input() font = Fonts.bebas
 
   title: TextData = { name: '', esp: '', eng: '' }
 
