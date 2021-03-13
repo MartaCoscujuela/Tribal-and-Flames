@@ -7,6 +7,10 @@
   column-gap: 30px;
 }
 
+::ng-deep a{
+  color: inherit;
+  text-decoration: underline;
+}
 @media (max-width: 768px) {
   .two-columns {
     -webkit-column-count: 1;

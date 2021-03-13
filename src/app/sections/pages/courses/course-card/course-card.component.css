@@ -13,7 +13,6 @@
 }
 
 .card-detail {
-  background-color: #fa413e;
   color: #ffffff;
   padding: 1em;
   line-height: 1.1em;
@@ -47,21 +46,25 @@
 
 .card-text {
   margin: 2em;
+  list-style: none;
+  min-height: 216px;
 }
 
-.card-text li::before {
+::ng-deep .card-text li::before {
   content: '\2022';
-  color: #fa413e;
   font-weight: bold;
   display: inline-block;
   width: 1em;
   margin-left: -1em;
 }
 
+::ng-deep .card-text span {
+  color: black
+}
+
 .flag {
   width: 140px;
   height: 140px;
-  background-color: #fa413e;
   border-radius: 1em;
   position: absolute;
   z-index: 1;

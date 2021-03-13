@@ -4,19 +4,19 @@
 }
 
 
-.img-container{
+.video-container{
   justify-content: space-around;
   flex-wrap: wrap;
   margin: 2em auto;
 }
 
 
-.img-container div{
+.video-container div{
    padding: 0;
 }
 
 
-.img-container .top-image {
+.video-container .top-video {
   background-size: cover;
   height: 0;
   padding-bottom: 55.6%;
@@ -25,10 +25,10 @@
 }
 
 
-.img-container:first-child {
+.video-container:first-child {
   border-left: 0px solid white
 }
 
-.img-container:last-child {
+.video-container:last-child {
   border-right: 0px solid white
 }

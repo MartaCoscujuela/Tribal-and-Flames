@@ -8,7 +8,11 @@ import { Colors } from '../../enums/enumColors'
 })
 export class AboutannaComponent implements OnInit {
   videoId = 482704655
-  images = ['img-anna-intro-1', 'img-anna-intro-2', 'img-anna-intro-3']
+  videosTop = [
+    '../../../../assets/videos/anna0.mp4',
+    '../../../../assets/videos/anna1.mp4',
+    '../../../../assets/videos/anna2.mp4'
+  ]
   titleColor = Colors.red
   constructor() {}
   ngOnInit(): void {}

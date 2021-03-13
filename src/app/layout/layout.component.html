@@ -10,7 +10,7 @@
 >
 </app-header>
 <app-menu [menuPos]="headerHeight" [solidBackground]="solidMenuBackground"></app-menu>
-<main [ngStyle]="{'margin-top': maxHeaderHeight+'px'}">
+<main [ngStyle]="{'margin-top': mainPos+'px'}">
   <router-outlet></router-outlet>
 </main>
 <app-footer></app-footer>

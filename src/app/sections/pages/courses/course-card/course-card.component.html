@@ -1,28 +1,20 @@
-<div class="flag">
-  <img src="/assets/img/00_home/courses/0.png" width="90" />
+<div class="flag" [ngStyle]="{'background-color': course.color}">
+  <img [src]="course.imgFlag" width="90" />
   <div class="title">CURSO REGULAR INICIAL T&F®</div>
 </div>
-
 <div class="card">
-  <img class="card-img-top" src="/assets/img/02_courses/card.jpg" alt="Card image cap" />
+  <img class="card-img-top" [src]="course.imgCard" alt="Card image cap" />
   <div class="card-body">
-    <p class="card-detail">
-      <span class="card-detail-desc"
-        >¡Bienvenidx a la Tribu! 1r Curso completo (Nivel Inicial). La versión más académica para aprender en
-        profundidad la teoría, la técnica y la creatividad del abanico ruso y del método T&F®.
+    <p class="card-detail" [ngStyle]="{'background-color': course.color}" >
+      <span class="card-detail-desc" [innerHTML]="course.description">
       </span>
       <span class="card-detail-price">
-        <span class="price">45€/mes</span> <span class="extra">(Packs de 4 clases de 1h).</span>
+        <span class="price">{{course.price}}</span> <span class="extra">{{course.extra}}</span>
       </span>
     </p>
 
-    <ul class="card-text">
-      <li>Estudio en profundidad (40h): Teoría, práctica, lenguaje de combos y coreo.</li>
-      <li>Protocolos de seguridad y gestión de performance.</li>
-      <li>Seguimiento opcional (¡escríbeme!)</li>
-      <li>Formar parte de la T&F Crew (accedes a Descuentos y todo lo que surja).</li>
-      <li>Diploma final certificando el estudio completo del curso inicial.</li>
+    <ul [ngStyle]="{'color': course.color}" class="card-text" [innerHTML]="course.bullets">
     </ul>
-    <app-action-btn text="INSCRIBIRME" justifyStyle="center" (clicked)="onClick($event)"></app-action-btn>
+    <app-action-btn [disable]="!course.ready" [text]="course.cta" justifyStyle="center" (clicked)="onClick($event)"></app-action-btn>
   </div>
 </div>

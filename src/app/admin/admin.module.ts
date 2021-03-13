@@ -23,7 +23,8 @@ import { ImgListComponent } from './admin-shared-components/img-list/img-list.co
 import { SingleImgComponent } from './admin-shared-components/img-list/single-img/single-img.component'
 import { TextListComponent } from './admin-shared-components/text-list/text-list.component'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
-import { CourseEditorComponent } from './admin-shared-components/course-editor/course-editor.component'
+import { CourseEditorComponent } from './admin-shared-components/course-editor/course-editor.component';
+import { AdminFaqComponent } from './admin-sections/admin-faq/admin-faq.component'
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { CourseEditorComponent } from './admin-shared-components/course-editor/c
     ImgListComponent,
     SingleImgComponent,
     TextListComponent,
-    CourseEditorComponent
+    CourseEditorComponent,
+    AdminFaqComponent
   ],
   imports: [
     CommonModule,
