@@ -52,14 +52,15 @@ import { BottomReelComponent } from './sections/shared-components/bottom-reel/bo
 import { InputMailComponent } from './sections/shared-components/input-mail/input-mail.component'
 import { ShowtimeComponent } from './sections/pages/shows/showtime/showtime.component'
 import { ContratanosComponent } from './sections/pages/shows/contratanos/contratanos.component'
-import { VideoComponent } from './sections/shared-components/video/video.component';
-import { QuotesComponent } from './sections/pages/crew/quotes/quotes.component';
-import { PromocionesComponent } from './sections/pages/crew/promociones/promociones.component';
-import { VentajasComponent } from './sections/pages/discounts/ventajas/ventajas.component';
-import { VentajaComponent } from './sections/pages/discounts/ventaja/ventaja.component';
-import { HaztelosComponent } from './sections/pages/discounts/haztelos/haztelos.component';
-import { ImgComponent } from './sections/shared-components/img/img.component';
-import { QuestionComponent } from './sections/pages/faq/question/question.component'
+import { VideoComponent } from './sections/shared-components/video/video.component'
+import { QuotesComponent } from './sections/pages/crew/quotes/quotes.component'
+import { PromocionesComponent } from './sections/pages/crew/promociones/promociones.component'
+import { VentajasComponent } from './sections/pages/discounts/ventajas/ventajas.component'
+import { VentajaComponent } from './sections/pages/discounts/ventaja/ventaja.component'
+import { HaztelosComponent } from './sections/pages/discounts/haztelos/haztelos.component'
+import { ImgComponent } from './sections/shared-components/img/img.component'
+import { QuestionComponent } from './sections/pages/faq/question/question.component';
+import { FortestingComponent } from './fortesting/fortesting.component'
 
 @NgModule({
   declarations: [
@@ -111,7 +112,8 @@ import { QuestionComponent } from './sections/pages/faq/question/question.compon
     VentajaComponent,
     HaztelosComponent,
     ImgComponent,
-    QuestionComponent
+    QuestionComponent,
+    FortestingComponent
   ],
 
   imports: [
