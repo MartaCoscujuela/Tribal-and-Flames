@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! E:\7 - Karmacode Studio\0_PROJECTS\0- Tribal\CODE\TribalAndFlames\tribal-and-flames\src\polyfills.ts */"hN/g");
+module.exports = __webpack_require__(/*! E:\7 - Karmacode Studio\0_PROJECTS\0- Tribal\CODE\TribalAndFlames\tribal-and-flames\frontend\src\polyfills.ts */"hN/g");
 
 
 /***/ }),
